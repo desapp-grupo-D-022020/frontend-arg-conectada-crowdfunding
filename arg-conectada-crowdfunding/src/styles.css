@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+*{ box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+:root {
+    --black: #1a1a1a;
+    --white: #ffffff;
+    --grey: #f5f5f5;
+    --gold: #ffb944;
+    --lightblue:#00aae4;
+    --lightblue-hover:#6ecce9;
+    /* --purple-hover:#b847ba; */
+}
+
+html { scroll-behavior: smooth; }
+
+body { font-family: 'Bookman Old Style', arial; }
+
+h1 { font-size: 66px; font-weight: 700; line-height: 80px; }
+h2 { font-size: 44px; margin-bottom: 30px; }
+h3 { font-size: 33px; }
+h5 { margin-bottom: 0px; }
+
+section { padding: 80px 0; }
+
+a:hover { text-decoration: none; }
+
+p {
+    font-size: 18px;
+    color:var(--black);
+    opacity: .5;
+    line-height: 1.8;
+    margin-bottom: 0px;
+}
+
+.content-center{
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    text-align: center;
+}
+
+@media (max-width: 575.98px) {
+    h1 { font-size: 40px; line-height: normal; }
+    .plans { min-width: unset; padding: 40px; }
+    .carousel-item p { font-size: 20px; }
+
+    .footer-menu {
+        display: block !important;
+        padding: 20px 0 !important;
+        font-size: 20px;
+
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) { }
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .plans { min-width: unset; padding: 40px 20px;}
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+ }
+
+@media (min-width: 1200px) { }
