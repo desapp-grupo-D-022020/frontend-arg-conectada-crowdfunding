@@ -1,0 +1,30 @@
+.navbar{
+    background-color: var(--lightblue);
+    box-shadow: 0 2px 4px 0 var(--black);
+    min-height: 75px;
+}
+
+.nav-link{
+    color: var(--white);
+}
+
+.navbar-brand{
+    color: var(--white);
+}
+
+.nav-link:hover{
+    color: var(--white);
+    background: var(--lightblue-hover);
+}
+
+.navbar-toggler{
+    font-size: 40px;
+}
+
+.navbar-toggler:focus{
+    outline: none;
+}
+
+.center {
+    margin: 0 2% 0 2%;
+}
