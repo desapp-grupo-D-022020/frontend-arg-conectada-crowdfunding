@@ -9,6 +9,12 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "es-AR",
+        "locales": {
+          "en-US": "src/locales/messages.en-US.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -29,6 +35,9 @@
             "scripts": []
           },
           "configurations": {
+            "en-US": {
+              "localize": ["en-US"]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -67,6 +76,9 @@
           "configurations": {
             "production": {
               "browserTarget": "arg-conectada-crowdfunding:build:production"
+            },
+            "en-US": {
+              "browserTarget": "arg-conectada-crowdfunding:build:en-US"
             }
           }
         },
