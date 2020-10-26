@@ -1,0 +1,15 @@
+#notFound {
+    background-image: url('../../../assets/img/estrellas.gif');
+    background-size: cover;
+    padding-top: 90px;
+    min-height: 982px;
+  }
+  h1 {
+    font-size: 60px;
+    /* color: #1AA216; */
+    /*color: var(--white);*/
+    color: white;
+    text-align: center;
+    /* margin-top: 280px; */
+    margin: 380px;
+  }
