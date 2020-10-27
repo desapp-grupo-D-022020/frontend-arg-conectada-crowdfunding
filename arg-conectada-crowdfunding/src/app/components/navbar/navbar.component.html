@@ -21,12 +21,12 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/projects" i18n="projects@@projects">Proyectos</a>
         </li>
-        <!--<li class="nav-item">
-          <a class="nav-link" (click)="collapse()" href="" *ngIf="!">Login</a>
+        <li class="nav-item">
+          <a class="nav-link" (click)="collapse()" routerLink="login" *ngIf="!isLogin">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="collapse()" href="" *ngIf="">Logout</a>
-        </li>-->
+          <a class="nav-link" (click)="logOut()" href="" *ngIf="isLogin">Logout</a>
+        </li>
       </ul>
     </div>
 </nav>
