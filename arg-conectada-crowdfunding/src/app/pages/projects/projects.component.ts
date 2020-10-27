@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import {Project} from '../../project';
 import { ProjectService } from '../../project.service';
+
+
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
@@ -19,7 +21,8 @@ export class ProjectsComponent implements OnInit {
   }
 
   getProjects(): void {
-    this.projects = this.projectService.getProjects();
+    this.projectService.getProjects()
+        .subscribe(projects => this.projects = projects);
   }
 
   ngOnInit(): void {

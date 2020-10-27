@@ -1,10 +1,21 @@
-<h2>Projects</h2>
-<ul class="projects">
-    <li *ngFor="let project of projects"
-    [class.selected]="project === selectedProject"
-    (click)="onSelect(project)">
-        <span class="badge">{{project.id}}</span> {{project.name}}
-  </li>
-</ul>
+<h2>Proyectos</h2>
 
-<app-project [project]="selectedProject"></app-project>
+<!--TODO: I18N-->
+<table>
+  <tr>
+    <th>id</th>
+    <th>Localidad</th>
+    <th>Provincia</th>
+    <th>Conectividad</th>
+    <th>Total recaudado</th>
+    <th>% faltante</th>
+  </tr>
+  <tr *ngFor="let p of projects">
+    <td>{{ p.id }}</td>
+    <td>{{ p.name }}</td>
+    <td>{{ p.province }}</td>
+    <td>{{ p.conectivity }}</td>
+    <td>{{ p.raised }}</td>
+    <td>{{ p.pct_left_to_reach_goal }}</td>
+  </tr>
+</table>
