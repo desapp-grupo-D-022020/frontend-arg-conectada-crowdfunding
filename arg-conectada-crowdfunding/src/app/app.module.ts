@@ -16,6 +16,7 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { ProjectDetailComponent } from './pages/project-detail/project-detail.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ProjectDetailComponent } from './pages/project-detail/project-detail.co
     NavbarComponent,
     FooterComponent,
     ProjectsComponent,
-    ProjectDetailComponent,    
+    ProjectDetailComponent,
+    LoginComponent,    
   ],
   imports: [
     BrowserModule,

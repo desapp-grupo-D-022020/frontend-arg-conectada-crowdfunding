@@ -12,7 +12,7 @@
 
 html { scroll-behavior: smooth; }
 
-body { font-family: 'Bookman Old Style', arial; }
+/*body { font-family: 'Bookman Old Style', arial; }*/
 
 h1 { font-size: 66px; font-weight: 700; line-height: 80px; }
 h2 { font-size: 44px; margin-bottom: 30px; }

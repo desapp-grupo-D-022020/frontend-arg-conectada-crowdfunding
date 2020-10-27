@@ -3,10 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component'
 import { NotFoundComponent } from './pages/not-found/not-found.component'
 import { ProjectsComponent } from './pages/projects/projects.component'
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'projects', component: ProjectsComponent },
+  { path: 'login', component: LoginComponent },
   { path: '**', pathMatch: 'full', component: NotFoundComponent },
 ];
 
@@ -14,4 +17,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
