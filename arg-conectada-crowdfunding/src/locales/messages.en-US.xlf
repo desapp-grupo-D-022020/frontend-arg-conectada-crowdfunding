@@ -2,15 +2,72 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="es-AR" datatype="plaintext" original="ng2.template" target-language="en-US">
     <body>
-      <trans-unit id="home test" datatype="html">
-        <source>¡la ruta &quot;home&quot; funciona!</source>
-        <target>home works!</target>
+      <trans-unit id="home" datatype="html">
+        <source>Inicio</source>
+        <target>Home</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">home</note>
+      </trans-unit>
+      <trans-unit id="projects" datatype="html">
+        <source>Proyectos</source>
+        <target>Projects</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/projects/projects.component.html</context>
           <context context-type="linenumber">1</context>
         </context-group>
-        <note priority="1" from="description">Introduccion de prueba</note>
-        <note priority="1" from="meaning">site header</note>
+        <note priority="1" from="description">projects</note>
+      </trans-unit>
+      <trans-unit id="place name" datatype="html">
+        <source>Localidad</source>
+        <target>Place name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/projects/projects.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">place name</note>
+      </trans-unit>
+      <trans-unit id="province" datatype="html">
+        <source>Provincia</source>
+        <target>Province</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/projects/projects.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">province name</note>
+      </trans-unit>
+      <trans-unit id="con status" datatype="html">
+        <source>Conectividad</source>
+        <target>Connectivity</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/projects/projects.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">conectivity status</note>
+      </trans-unit>
+      <trans-unit id="amount raised" datatype="html">
+        <source>Total recaudado</source>
+        <target>Amount raised</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/projects/projects.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">amount raised</note>
+      </trans-unit>
+      <trans-unit id="pct left" datatype="html">
+        <source>% faltante</source>
+        <target>% left to goal</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/projects/projects.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">pct left</note>
       </trans-unit>
     </body>
   </file>

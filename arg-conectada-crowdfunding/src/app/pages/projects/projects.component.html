@@ -1,14 +1,14 @@
-<h2>Proyectos</h2>
+<h2 i18n="projects@@projects">Proyectos</h2>
 
 <!--TODO: I18N-->
 <table>
   <tr>
     <th>id</th>
-    <th>Localidad</th>
-    <th>Provincia</th>
-    <th>Conectividad</th>
-    <th>Total recaudado</th>
-    <th>% faltante</th>
+    <th i18n="place name@@place name">Localidad</th>
+    <th i18n="province name@@province">Provincia</th>
+    <th i18n="conectivity status@@con status">Conectividad</th>
+    <th i18n="amount raised@@amount raised">Total recaudado</th>
+    <th i18n="pct left@@pct left">% faltante</th>
   </tr>
   <tr *ngFor="let p of projects">
     <td>{{ p.id }}</td>
