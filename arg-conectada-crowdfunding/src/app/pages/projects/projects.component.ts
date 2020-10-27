@@ -13,6 +13,8 @@ export class ProjectsComponent implements OnInit {
   
   projects: Project[];
   selectedProject: Project;
+  displayedColumns: string[] = ['id','name','province','conectivity','raised','pct_left_to_reach_goal'];
+  dataSource = this.getProjects();
 
   constructor(private projectService: ProjectService) { }
 

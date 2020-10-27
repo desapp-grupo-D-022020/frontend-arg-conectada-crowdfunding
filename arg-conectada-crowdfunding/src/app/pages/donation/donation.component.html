@@ -1,0 +1,17 @@
+<div *ngIf="project">
+    <h2>{{ project.name }}</h2>
+    <div>
+        <label>
+        Monto:
+        <input type="text" [formControl]="amount">
+        </label>
+
+        <label>
+            Comentario:
+            <input type="text" [formControl]="comment">
+        </label>
+    </div>
+
+    <button (click)="goBack()">Atrás</button>
+    <button (click)="donate()">Donar</button>
+</div>

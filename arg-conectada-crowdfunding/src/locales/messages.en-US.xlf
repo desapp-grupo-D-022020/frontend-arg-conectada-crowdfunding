@@ -11,6 +11,15 @@
         </context-group>
         <note priority="1" from="description">home</note>
       </trans-unit>
+      <trans-unit id="profile" datatype="html">
+        <source>Perfil</source>
+        <target>Profile</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <note priority="1" from="description">profile</note>
+      </trans-unit>
       <trans-unit id="projects" datatype="html">
         <source>Proyectos</source>
         <target>Projects</target>
@@ -26,7 +35,7 @@
       </trans-unit>
       <trans-unit id="place name" datatype="html">
         <source>Localidad</source>
-        <target>Place name</target>
+        <target>Place</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/projects/projects.component.html</context>
           <context context-type="linenumber">7</context>

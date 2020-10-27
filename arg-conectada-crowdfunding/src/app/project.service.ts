@@ -5,7 +5,6 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { Project } from './project';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -21,6 +20,14 @@ export class ProjectService {
     .pipe(
       tap(_ => this.log('fetched projects')),
       catchError(this.handleError<Project[]>('getProjects', []))
+    );
+  }
+
+  getProject(id: number): Observable<Project> {
+    const url = `${this.projectsUrl}/${id}`;
+    return this.http.get<Project>(url).pipe(
+      tap(_ => this.log(`fetched project id=${id}`)),
+      catchError(this.handleError<Project>(`getProject id=${id}`))
     );
   }
 
