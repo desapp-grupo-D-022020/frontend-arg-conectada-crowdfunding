@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -17,7 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { ProjectDetailComponent } from './pages/project-detail/project-detail.component';
 import { LoginComponent } from './components/login/login.component';
-
+import { DonationComponent } from './pages/donation/donation.component';
 
 @NgModule({
   declarations: [
@@ -29,10 +30,12 @@ import { LoginComponent } from './components/login/login.component';
     ProjectsComponent,
     ProjectDetailComponent,
     LoginComponent,    
+    DonationComponent,    
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
