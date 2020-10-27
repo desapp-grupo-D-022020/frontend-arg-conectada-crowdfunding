@@ -13,16 +13,16 @@ const head = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
 })
 export class AuthService {
 
-  private authURL = `${environment.urlApi}/auth`;
+  private authURL = `${environment.urlApi}/auth/`;
 
   constructor(private httpClient: HttpClient) { }
   
   public login(user: UserLogin): Observable<JwtModel> {
-    return this.httpClient.post<JwtModel>(this.authURL + '/login', user, head);
+    return this.httpClient.post<JwtModel>(this.authURL + 'login', user, head);
   }
   
   public registry(user: NewUser): Observable<any> {
-    return this.httpClient.post<any>(this.authURL + '/newUser', user, head);
+    return this.httpClient.post<any>(this.authURL + 'newUser', user, head);
   }
 
 }
