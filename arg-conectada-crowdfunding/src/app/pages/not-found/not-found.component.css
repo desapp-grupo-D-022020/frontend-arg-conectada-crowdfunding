@@ -6,9 +6,7 @@
   }
   h1 {
     font-size: 60px;
-    /* color: #1AA216; */
-    /*color: var(--white);*/
-    color: white;
+    color: var(--white);
     text-align: center;
     /* margin-top: 280px; */
     margin: 380px;

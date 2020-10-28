@@ -1,0 +1,23 @@
+p {
+    color: var(--white);
+}
+
+.bgDark { background-color: var(--lightblue); }
+
+footer {
+    padding: 20px 0;
+    text-align: center;
+    color: var(--white);
+}
+
+footer a {
+    color: var(--white);
+}
+
+footer a:hover {
+    color: var(--white);
+}
+
+footer .list-inline .list-inline-item {
+    padding: 10px 15px;
+}

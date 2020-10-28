@@ -9,6 +9,12 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "es-AR",
+        "locales": {
+          "en-US": "src/locales/messages.en-US.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -24,11 +30,22 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/popper.js/dist/umd/popper.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
+            "en-US": {
+              "localize": [
+                "en-US"
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -67,6 +84,9 @@
           "configurations": {
             "production": {
               "browserTarget": "arg-conectada-crowdfunding:build:production"
+            },
+            "en-US": {
+              "browserTarget": "arg-conectada-crowdfunding:build:en-US"
             }
           }
         },
@@ -88,6 +108,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []

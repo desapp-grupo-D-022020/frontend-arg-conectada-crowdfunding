@@ -1,0 +1,27 @@
+<section id="projects">
+  <div class="container">
+    <h2 i18n="projects@@projects">Proyectos</h2>
+
+    <table>
+      <tr>
+        <th>id</th>
+        <th i18n="place name@@place name">Localidad</th>
+        <th i18n="province name@@province">Provincia</th>
+        <th i18n="conectivity status@@con status">Conectividad</th>
+        <th i18n="amount raised@@amount raised">Total recaudado</th>
+        <th i18n="pct left@@pct left">% faltante</th>
+        <th i18n="project actions@@project actions">Acciones</th>
+      </tr>
+      <tr *ngFor="let p of projects">
+        <td>{{ p.id }}</td>
+        <td>{{ p.name }}</td>
+        <td>{{ p.province }}</td>
+        <td>{{ p.conectivity }}</td>
+        <td>{{ p.raised }}</td>
+        <td>{{ p.pct_left_to_reach_goal }}</td>
+        <td><a routerLink="/donation/{{p.id}}">Donar</a></td>
+      </tr>
+    </table>
+    
+  </div>
+</section>
