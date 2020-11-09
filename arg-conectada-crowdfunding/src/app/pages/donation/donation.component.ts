@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 import { ProjectService } from '../../services/project.service';
-import { Project } from 'src/app/project';
+import { Project } from 'src/app/models/project';
 
 
 @Component({
@@ -14,6 +14,11 @@ import { Project } from 'src/app/project';
   styleUrls: ['./donation.component.css']
 })
 export class DonationComponent implements OnInit {
+
+  project: Project;
+
+  amount = new FormControl('');
+  comment = new FormControl('');
 
   constructor(
     private route: ActivatedRoute,
@@ -24,11 +29,6 @@ export class DonationComponent implements OnInit {
   ngOnInit(): void {
     this.getProject();
   }
-
-  project: Project;
-
-  amount = new FormControl('');
-  comment = new FormControl('');
 
   getProject(): void {
     const id = +this.route.snapshot.paramMap.get('id');
@@ -43,5 +43,4 @@ export class DonationComponent implements OnInit {
   donate(): void {
     //TODO!
   }
-
 }

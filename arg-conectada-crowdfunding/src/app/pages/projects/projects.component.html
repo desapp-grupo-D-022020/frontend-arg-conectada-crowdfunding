@@ -28,6 +28,7 @@
             <table class="table">
               <thead class="thead-lightblue">
                 <tr>
+                  <th i18n="project name@@project name" scope="col">Nombre</th>
                   <th i18n="place name@@place name" scope="col">Localidad</th>
                   <th i18n="province name@@province" scope="col">Provincia</th>
                   <th i18n="conectivity status@@con status" scope="col">
@@ -49,6 +50,7 @@
                   (click)="collapse()"
                 >
                   <td>{{ p.name }}</td>
+                  <td>{{ p.placeName }}</td>
                   <td>{{ p.province }}</td>
                   <td>{{ p.conectivity }}</td>
                   <td>{{ p.raised }}</td>

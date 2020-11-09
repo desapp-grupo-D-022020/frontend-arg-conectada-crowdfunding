@@ -1,17 +1,23 @@
-<div *ngIf="project">
-    <h2>{{ project.name }}</h2>
-    <div>
-        <label>
-        Monto:
-        <input type="text" [formControl]="amount">
-        </label>
+<div class="container" *ngIf="project">
+  <h2>{{ project.name }}</h2>
+  <div>
+    <label class="col-md-6">
+      Monto:
+      <input type="text" [formControl]="amount" />
+    </label>
+  </div>
 
-        <label>
-            Comentario:
-            <input type="text" [formControl]="comment">
-        </label>
-    </div>
-
-    <button (click)="goBack()">Atrás</button>
-    <button (click)="donate()">Donar</button>
+  <div>
+    <label> Comentario: </label>
+    <textarea
+      [formControl]="comment"
+      required=""
+      class="form-control"
+      maxlength="1000"
+    ></textarea>
+  </div>
+  <div class="col-md-12">
+    <button class="btn btn-primary" (click)="goBack()">Atrás</button>
+    <button class="btn btn-primary" (click)="donate()">Donar</button>
+  </div>
 </div>

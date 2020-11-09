@@ -1,30 +1,31 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { catchError, tap } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
-import { Project } from '../project';
+import { Project } from '../models/project';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
 
-  private projectsUrl = 'api/projects';  // URL to web api
+  private projectsUrl = `${environment.urlApi}/projects`;  // URL to web api
 
   constructor(private http: HttpClient) { }
 
   /** GET projects from the server */
   getProjects(): Observable<Project[]> {
-    return this.http.get<Project[]>(this.projectsUrl)
-    .pipe(
-      tap(_ => this.log('fetched projects')),
-      catchError(this.handleError<Project[]>('getProjects', []))
-    );
+    return this.http.get<Project[]>(`${this.projectsUrl}/getOpenProjects`)
+    // .pipe(
+    //   tap(_ => this.log('fetched projects')),
+    //   catchError(this.handleError<Project[]>('getProjects', []))
+    // );
   }
 
   getProject(id: number): Observable<Project> {
-    const url = `${this.projectsUrl}/${id}`;
+    const url = `${this.projectsUrl}/get/${id}`;
     return this.http.get<Project>(url).pipe(
       tap(_ => this.log(`fetched project id=${id}`)),
       catchError(this.handleError<Project>(`getProject id=${id}`))

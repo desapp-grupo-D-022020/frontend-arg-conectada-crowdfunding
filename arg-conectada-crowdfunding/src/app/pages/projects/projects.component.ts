@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Project} from '../../project';
+import {Project} from '../../models/project';
 import { ProjectService } from '../../services/project.service';
 declare var $ : any;
 
@@ -11,24 +11,16 @@ declare var $ : any;
 export class ProjectsComponent implements OnInit {
   
   projects: Project[];
-  //selectedProject: Project;
-  displayedColumns: string[] = ['id','name','province','conectivity','raised','pct_left_to_reach_goal'];
-  dataSource = this.getProjects();
 
   constructor(private projectService: ProjectService) { }
 
-
-  // onSelect(project: Project): void {
-  //   this.selectedProject = project;
-  // }
+  ngOnInit(): void {
+    this.getProjects();
+  }
 
   getProjects(): void {
     this.projectService.getProjects()
         .subscribe(projects => this.projects = projects);
-  }
-
-  ngOnInit(): void {
-    this.getProjects();
   }
   
   collapse():void{

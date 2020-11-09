@@ -1,0 +1,17 @@
+h2 {
+    text-align: center;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: var(--lightblue);
+    color: var(--white);
+    border: 2px solid var(--black);
+}
+
+.btn-primary:hover:enabled { background-color: var(--lightblue-hover); border: 2px solid var(--black); }
+
+.comentarios-container { margin-top: 0px; margin-bottom: 0px; height: 92px; }
