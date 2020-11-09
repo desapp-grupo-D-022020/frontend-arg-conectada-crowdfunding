@@ -9,5 +9,28 @@ td, th {
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
+   background-color: #dddddd;
+}
+
+.btn-primary {
+    background-color: var(--lightblue) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--lightblue-hover) !important;
+}
+
+.btn-outline-primary {
+    border-color: var(--lightblue) !important;
+    color: var(--lightblue) !important;
+}
+
+.btn-outline-primary:hover {
+    color: var(--white) !important;
+    background-color: var(--lightblue) !important;
+}
+
+.thead-lightblue {
+    color: var(--white);
+    background-color: var(--lightblue);
 }

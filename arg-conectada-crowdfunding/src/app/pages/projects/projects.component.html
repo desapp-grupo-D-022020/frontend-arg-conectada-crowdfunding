@@ -1,27 +1,65 @@
 <section id="projects">
   <div class="container">
-    <h2 i18n="projects@@projects">Proyectos</h2>
+    <h2 i18n="projects@@projects" class="content-center mt-0 topmargin-lg">Proyectos</h2>
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        
+          <h5 class="mb-0">
+            <button
+              class="btn btn-primary btn-lg btn-block"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              Proyectos abiertos
+            </button>
+          </h5>
+        
 
-    <table>
-      <tr>
-        <th>id</th>
-        <th i18n="place name@@place name">Localidad</th>
-        <th i18n="province name@@province">Provincia</th>
-        <th i18n="conectivity status@@con status">Conectividad</th>
-        <th i18n="amount raised@@amount raised">Total recaudado</th>
-        <th i18n="pct left@@pct left">% faltante</th>
-        <th i18n="project actions@@project actions">Acciones</th>
-      </tr>
-      <tr *ngFor="let p of projects">
-        <td>{{ p.id }}</td>
-        <td>{{ p.name }}</td>
-        <td>{{ p.province }}</td>
-        <td>{{ p.conectivity }}</td>
-        <td>{{ p.raised }}</td>
-        <td>{{ p.pct_left_to_reach_goal }}</td>
-        <td><a routerLink="/donation/{{p.id}}">Donar</a></td>
-      </tr>
-    </table>
-    
+        <div
+          id="collapseOne"
+          class="collapse"
+          aria-labelledby="headingOne"
+          data-parent="#accordionExample"
+        >
+          <div class="card-body">
+            <table class="table">
+              <thead class="thead-lightblue">
+                <tr>
+                  <th i18n="place name@@place name" scope="col">Localidad</th>
+                  <th i18n="province name@@province" scope="col">Provincia</th>
+                  <th i18n="conectivity status@@con status" scope="col">
+                    Conectividad
+                  </th>
+                  <th i18n="amount raised@@amount raised" scope="col">
+                    Total recaudado
+                  </th>
+                  <th i18n="pct left@@pct left" scope="col">% faltante</th>
+                  <th i18n="project actions@@project actions" scope="col">
+                    Acciones
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  *ngFor="let p of projects"
+                  class="table-light"
+                  (click)="collapse()"
+                >
+                  <td>{{ p.name }}</td>
+                  <td>{{ p.province }}</td>
+                  <td>{{ p.conectivity }}</td>
+                  <td>{{ p.raised }}</td>
+                  <td>{{ p.pct_left_to_reach_goal }}%</td>
+                  <td><a routerLink="/donation/{{ p.id }}" class="btn btn-outline-primary">Donar</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

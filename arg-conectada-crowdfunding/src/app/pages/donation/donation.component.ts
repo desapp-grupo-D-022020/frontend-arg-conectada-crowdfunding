@@ -4,7 +4,7 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-import { ProjectService } from '../../project.service';
+import { ProjectService } from '../../services/project.service';
 import { Project } from 'src/app/project';
 
 
