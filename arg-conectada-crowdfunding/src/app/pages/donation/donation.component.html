@@ -1,4 +1,4 @@
-<div class="center"> 
+<div class="center">
   <div class="container box" *ngIf="project">
     <h2>{{ project.name }}</h2>
     <form [formGroup]="donationForm" (ngSubmit)="onSubmit()" class="row">
@@ -6,12 +6,22 @@
         <label> Monto: </label>
         <div class="form-group">
           <input
+            [class.is-invalid]="
+              getField('amount').invalid && getField('amount').touched
+            "
             (keypress)="onlynumber($event)"
             formControlName="amount"
             type="text"
             class="form-control"
             maxlength="15"
           />
+          <div *ngIf="getField('amount').invalid && getField('amount').touched">
+            <small
+              *ngIf="getField('amount').errors?.required"
+              class="text-danger"
+              >Campo obligatorio</small
+            >
+          </div>
         </div>
         <label> Comentario: </label>
         <div class="form-group">

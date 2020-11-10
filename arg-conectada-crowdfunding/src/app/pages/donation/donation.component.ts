@@ -46,7 +46,7 @@ export class DonationComponent implements OnInit {
     this.getProject();
 
     this.donationForm = this.fb.group({
-      amount: [''],
+      amount: ['', Validators.required],
       comment: ['', [Validators.required, Validators.minLength(5)]]
       })
   }
