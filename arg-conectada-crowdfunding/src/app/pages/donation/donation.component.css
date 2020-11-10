@@ -2,8 +2,14 @@ h2 {
     text-align: center;
 }
 
-.full-width {
-    width: 100%;
+.left-width {
+    margin: auto 0.5% auto 0%;
+    width: 49.5%;
+}
+
+.right-width {
+    margin: auto 0% auto 0.5%;
+    width: 49.5%;
 }
 
 .btn-primary {
@@ -12,6 +18,31 @@ h2 {
     border: 2px solid var(--black);
 }
 
-.btn-primary:hover:enabled { background-color: var(--lightblue-hover); border: 2px solid var(--black); }
+.center {
+    background-image: url('../../../assets/img/banner.jpg');
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
 
-.comentarios-container { margin-top: 0px; margin-bottom: 0px; height: 92px; }
+.box {
+    background: white;
+    color: #333;
+    border: 1px solid #333;
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px var(--black);
+    box-sizing: border-box;
+    margin-top: 10px !important
+}
+
+.btn-primary:hover:enabled { 
+    background-color: var(--lightblue-hover); 
+    border: 2px solid var(--black); 
+}
+
+.comentarios-container { 
+    max-height: 200px; 
+    min-height: 100px;
+}

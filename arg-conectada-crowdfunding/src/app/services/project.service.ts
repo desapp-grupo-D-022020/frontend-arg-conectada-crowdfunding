@@ -32,6 +32,16 @@ export class ProjectService {
     );
   }
 
+  /**
+   * Envia el formulario de contacto de la view del componente contact a 
+   * la api para ser enviada por email
+   * @param dataContact el formulario a enviar
+   */
+  donation(dataContact){
+    const path = `${environment.urlApi}/email/sendEmail`;
+    return this.http.post<any>(path, dataContact);
+  }
+
 
   /**
    * Handle Http operation that failed.

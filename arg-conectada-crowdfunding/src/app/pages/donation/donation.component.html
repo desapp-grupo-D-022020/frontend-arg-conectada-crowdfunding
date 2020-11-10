@@ -1,23 +1,56 @@
-<div class="container" *ngIf="project">
-  <h2>{{ project.name }}</h2>
-  <div>
-    <label class="col-md-6">
-      Monto:
-      <input type="text" [formControl]="amount" />
-    </label>
-  </div>
-
-  <div>
-    <label> Comentario: </label>
-    <textarea
-      [formControl]="comment"
-      required=""
-      class="form-control"
-      maxlength="1000"
-    ></textarea>
-  </div>
-  <div class="col-md-12">
-    <button class="btn btn-primary" (click)="goBack()">Atrás</button>
-    <button class="btn btn-primary" (click)="donate()">Donar</button>
+<div class="center"> 
+  <div class="container box" *ngIf="project">
+    <h2>{{ project.name }}</h2>
+    <form [formGroup]="donationForm" (ngSubmit)="onSubmit()" class="row">
+      <div class="col-md-12">
+        <label> Monto: </label>
+        <div class="form-group">
+          <input
+            (keypress)="onlynumber($event)"
+            formControlName="amount"
+            type="text"
+            class="form-control"
+            maxlength="15"
+          />
+        </div>
+        <label> Comentario: </label>
+        <div class="form-group">
+          <textarea
+            [class.is-invalid]="
+              getField('comment').invalid && getField('comment').touched
+            "
+            formControlName="comment"
+            required=""
+            class="form-control comentarios-container"
+            maxlength="1000"
+          ></textarea>
+          <div
+            *ngIf="getField('comment').invalid && getField('comment').touched"
+          >
+            <small
+              *ngIf="getField('comment').errors?.required"
+              class="text-danger"
+              >Campo obligatorio</small
+            >
+            <small
+              *ngIf="getField('comment').errors?.minlength"
+              class="text-danger"
+              >Debe contener al menos 5 caracteres</small
+            >
+          </div>
+        </div>
+        <button class="btn btn-primary left-width" (click)="goBack()">
+          Atrás
+        </button>
+        <button
+          [disabled]="!donationForm.valid"
+          class="btn btn-primary right-width"
+          type="submit"
+          (click)="donate()"
+        >
+          Donar
+        </button>
+      </div>
+    </form>
   </div>
 </div>
