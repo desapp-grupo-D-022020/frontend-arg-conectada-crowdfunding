@@ -38,8 +38,8 @@ export class ProjectService {
    * @param dataContact el formulario a enviar
    */
   donation(dataContact){
-    const path = `${environment.urlApi}/email/sendEmail`;
-    return this.http.post<any>(path, dataContact);
+    const path = `${this.projectsUrl}/donate`;
+    return this.http.put<any>(path, dataContact);
   }
 
 

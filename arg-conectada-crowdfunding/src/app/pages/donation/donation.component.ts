@@ -19,6 +19,8 @@ export class DonationComponent implements OnInit {
 
   project: Project;
 
+  projectId: number;
+
   donationForm: FormGroup;
   
   constructor(
@@ -43,6 +45,8 @@ export class DonationComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.projectId = +this.route.snapshot.paramMap.get('id');
+    
     this.getProject();
 
     this.donationForm = this.fb.group({
@@ -52,22 +56,17 @@ export class DonationComponent implements OnInit {
   }
 
   onSubmit(){
-
-    //this.contactService.validationCode(formValidationCode).subscribe();
-    //this.validationCodeForm.reset();
-  } 
-
-  buildDataContact(){
     const formData = new FormData();
-    this.getFieldValue('phoneNumber')? formData.append('phoneNumber', this.getFieldValue('phoneNumber')): formData.append('phoneNumber', "Sin Número");
-    formData.append('body', this.getFieldValue('body'));
+    formData.append('projectId', `${this.projectId}`);
+    formData.append('userId', '1');
+    formData.append('amount', this.getFieldValue('amount'));
+    formData.append('comment', this.getFieldValue('comment'));
  
     this.projectService.donation(formData)
      .subscribe(
-       response => { this.alert('Donación realizada exitosamente!', 'success', 2500), console.log('Success!', response) },
-       error => { this.alert('Error al realizar la donación! Disculpe, vuelva a intentarlo más tarde', 'error', 2500), console.log('Error!', error) },
+       response => { this.alert('Donación realizada exitosamente!', 'success', 2800), console.log('Success!', response) },
+       error => { this.alert('Error al realizar la donación! Disculpe, vuelva a intentarlo más tarde', 'error', 3500), console.log('Error!', error) },
     );
-    this.loadingAlert();
     this.resetContactForm();
   }
 
@@ -76,30 +75,12 @@ export class DonationComponent implements OnInit {
   }
 
   getProject(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.projectService.getProject(id)
+    this.projectService.getProject(this.projectId)
       .subscribe(project => this.project = project);
   }
 
   goBack(): void {
     this.location.back();
-  }
-
-    /**
-   * Muestra una alerta de carga en la view
-   */
-  loadingAlert(){
-    Swal.fire({
-      title: 'Procesando sus datos de contacto',
-      timer: 8000,
-      background:'#563d7c',
-      allowOutsideClick: false,
-      confirmButtonColor: '#43c2d0',
-      onBeforeOpen: () => {
-        Swal.showLoading()
-      }
-    })
-    this.styleAlert();
   }
 
   /**
@@ -112,7 +93,7 @@ export class DonationComponent implements OnInit {
       position: 'center',
       icon: tipo,
       title: message,
-      background:'#563d7c',
+      background:'#00aae4',
       showConfirmButton: false,
       timerProgressBar: true,
       timer: time,
@@ -137,9 +118,5 @@ export class DonationComponent implements OnInit {
     if (key < 48 || key > 57) {
         e.preventDefault();
     }
-  }
-
-  donate(): void {
-    //TODO!
   }
 }

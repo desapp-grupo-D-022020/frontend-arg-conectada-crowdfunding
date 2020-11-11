@@ -49,14 +49,17 @@
             >
           </div>
         </div>
-        <button class="btn btn-primary left-width" (click)="goBack()">
+        <button
+          class="btn btn-primary left-width"
+          type="button"
+          (click)="goBack()"
+        >
           Atrás
         </button>
         <button
           [disabled]="!donationForm.valid"
           class="btn btn-primary right-width"
           type="submit"
-          (click)="donate()"
         >
           Donar
         </button>
