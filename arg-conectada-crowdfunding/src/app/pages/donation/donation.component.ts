@@ -26,8 +26,7 @@ export class DonationComponent implements OnInit {
   constructor(
     private fb:FormBuilder,
     private route: ActivatedRoute,
-    private projectService: ProjectService,
-    private location: Location
+    private projectService: ProjectService
   ) { }
 
   /**
@@ -80,7 +79,7 @@ export class DonationComponent implements OnInit {
   }
 
   goBack(): void {
-    this.location.back();
+    location.href = `${location.origin}/#projects`;
   }
 
   /**
