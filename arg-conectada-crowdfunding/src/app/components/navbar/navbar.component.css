@@ -1,3 +1,7 @@
+img {
+	color: var(--white) !important;
+}
+
 .form-inline {
 	display: inline-block;
 }

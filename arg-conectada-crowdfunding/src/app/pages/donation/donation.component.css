@@ -1,4 +1,5 @@
 h2 {
+    font-family: 'Times New Roman', Times, serif;
     text-align: center;
 }
 
@@ -12,47 +13,30 @@ h2 {
     width: 49.5%;
 }
 
-.btn-primary {
-    background-color: var(--lightblue);
-    color: var(--white);
-    border: 2px solid var(--black);
-}
-
-.center {
-    background-image: url('../../../assets/img/banner.jpg');
-    display: flex;
-    position: fixed;
-    z-index: 1060;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 0.625em;
-    overflow-x: hidden;
-    transition: background-color 0.1s;
-    -webkit-overflow-scrolling: touch;
-}
-
 .box {
-    background: white;
+    background: var(--white);
+    width: 45%;
     color: #333;
     border: 1px solid #333;
-    padding: 50px;
-    border-radius: 5px;
+    padding: 40px;
+    border-radius: 10px;
     box-shadow: 10px 10px 5px var(--black);
     box-sizing: border-box;
     margin-top: 10px !important
 }
 
-.btn-primary:hover:enabled { 
-    background-color: var(--lightblue-hover); 
-    border: 2px solid var(--black); 
-}
-
 .comentarios-container { 
     max-height: 200px; 
     min-height: 100px;
+}
+
+.btn-primary {
+    background-color: var(--lightblue);
+    color: var(--white);
+    border: 1px solid var(--black);
+}
+
+.btn-primary:hover:enabled { 
+    background-color: var(--lightblue-hover); 
+    border: 1px solid var(--black); 
 }

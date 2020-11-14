@@ -13,14 +13,14 @@
 			<a class="nav-item nav-link" (click)="collapse()" routerLink="login" *ngIf="!isLogin">Login</a>
       <div class="nav-item dropdown" *ngIf="isLogin">
 				<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img
-          src="../../../assets/img/account_avatar.svg"
+          src="../../../assets/img/avatar_account.png"
           class="avatar"
           alt="Avatar" />
            User loging <b class="caret"></b></a>
 				<div class="dropdown-menu">
-					<a href="#" class="dropdown-item"><span class="material-icons"> person </span> Profile</a>
-					<a href="#" class="dropdown-item"><span class="material-icons"> calendar_today </span> Calendar</a>
-					<a href="#" class="dropdown-item"><span class="material-icons"> tune </span> Settings</a>
+					<a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
+					<a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a>
+					<a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a>
 					<div class="dropdown-divider divider"></div>
 					<a href="#" class="dropdown-item" (click)="logOut()"><i class="material-icons">&#xE8AC;</i> Logout</a>
 				</div>

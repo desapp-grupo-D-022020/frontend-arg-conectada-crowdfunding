@@ -1,9 +1,6 @@
-<div *ngIf="isLogged; else loggedOut">
-  Has iniciado sesión como: {{ roles }}
-</div>
 
-<ng-template #loggedOut>
-  <div *ngIf="!isLogged" class="container">
+
+<!-- <div *ngIf="!isLogged" class="container">
     <h5>Iniciar Sesión</h5>
     <form name="form" #f="ngForm" novalidate (ngSubmit)="onLogin()">
       <div class="form-group">
@@ -41,5 +38,81 @@
         <p class="float-right mr-3">¿No tienes cuenta?</p>
       </div>
     </form>
+  </div>  
+  -->
+
+<div class="center-form" *ngIf="!isLogged">
+  <div class="login-form">
+    <form name="form" #f="ngForm" novalidate (ngSubmit)="onLogin()">
+      <div class="avatar">
+        <img src="../../../assets/img/avatar.png" alt="Avatar" />
+      </div>
+      <h2 class="text-center">Member Login</h2>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <span class="fa fa-user"></span>
+            </span>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            name="username"
+            placeholder="Username"
+            [(ngModel)]="form.userName"
+            autocomplete="off"
+            required="required"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-lock"></i>
+            </span>
+          </div>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            placeholder="Password"
+            [(ngModel)]="form.password"
+            autocomplete="off"
+            required="required"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-sing btn-block login-btn" [disabled]="!f.valid">
+          Sign in
+        </button>
+        <div *ngIf="f.submitted && isLoginFail" class="alert alert-danger mt-3">
+          Fail al loguearse: {{ errorMsg }}
+        </div>
+      </div>
+      <div class="clearfix">
+        <label class="float-left form-check-label"
+          ><input type="checkbox" /> Remember me</label
+        >
+        <a href="#" class="float-right text-primary">Forgot Password?</a>
+      </div>
+      <div class="or-seperator"><i>or</i></div>
+      <div class="text-center social-btn">
+        <a href="#" class="btn btn-primary btn-block"
+          ><i class="fa fa-facebook"></i> Sign in with <b>Facebook</b></a
+        >
+        <a href="#" class="btn btn-info btn-block"
+          ><i class="fa fa-twitter"></i> Sign in with <b>Twitter</b></a
+        >
+        <a href="#" class="btn btn-danger btn-block"
+          ><i class="fa fa-google"></i> Sign in with <b>Google</b></a
+        >
+      </div>
+      <div class="hint-text">
+        Don't have an account? <a routerLink="/registry" class="text-primary">Register Now!</a>
+      </div>
+    </form>
   </div>
-</ng-template>
+</div>
