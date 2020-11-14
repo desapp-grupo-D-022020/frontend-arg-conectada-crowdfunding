@@ -1,4 +1,4 @@
-*{ box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+/* *{ box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; } */
 
 :root {
     --black: #1a1a1a;
@@ -63,4 +63,5 @@ p {
 @media (min-width: 1200px) { }
 
 html, body { height: 100%; }
+
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

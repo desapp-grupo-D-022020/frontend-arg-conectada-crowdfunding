@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Location} from '@angular/common';
 import { UserLogin } from '../../models/user-login';
 import { AuthService } from '../../services/auth.service';
 import { TokenService } from '../../services/token.service';
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
   errorMsg = '';
 
-  constructor(private authService: AuthService, private tokenService: TokenService, private router: Router) { }
+  constructor(private authService: AuthService, private tokenService: TokenService, private router: Router, private location:Location) { }
 
   ngOnInit() {
     if (this.tokenService.getToken()) {
@@ -40,7 +41,7 @@ export class LoginComponent implements OnInit {
       this.isLogged = true;
       this.isLoginFail = false;
       this.roles = this.tokenService.getAuthorities();
-      window.location.reload();
+      this.goBack();
     },
       (err: any) => {
         this.isLogged = false;
@@ -48,6 +49,10 @@ export class LoginComponent implements OnInit {
         this.errorMsg = err.error.message;
       }
     );
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }
