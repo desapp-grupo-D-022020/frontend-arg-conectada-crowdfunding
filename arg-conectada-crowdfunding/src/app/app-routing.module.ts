@@ -5,6 +5,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component'
 import { ProjectsComponent } from './pages/projects/projects.component'
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component'
+import { ProfileComponent } from './pages/profile/profile.component'
 import { DonationComponent } from './pages/donation/donation.component';
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'donation/:id', component: DonationComponent },
   { path: 'registry', component: SignUpComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: '**', pathMatch: 'full', component: NotFoundComponent },
 ];
 
