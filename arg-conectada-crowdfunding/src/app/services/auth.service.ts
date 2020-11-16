@@ -24,7 +24,6 @@ export class AuthService {
   public registry(user: NewUser): Observable<any> {
     return this.httpClient.post<any>(this.authURL + 'newUser', user, head);
   }
-
 }
 
 
