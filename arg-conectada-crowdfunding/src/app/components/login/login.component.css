@@ -38,9 +38,22 @@
 	width: 100%;
 }	
 
-.login-form h2 {
-	font-size: 22px;
-	margin: 35px 0 25px;
+.form-header {
+	margin: -30.5px -30.5px 30.5px;
+	padding: 30px 30px 10px;
+	text-align: center;
+	background: var(--lightblue);
+	border-bottom: 1px solid var(--white);
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+	color: var(--white);
+}
+
+.form-header h2 {
+	font-size: 34px;
+	font-weight: bold;
+	margin: 30px auto 15px;
+	font-family: 'Pacifico', sans-serif !important;
 }
 
 .login-form .hint-text {
@@ -53,6 +66,10 @@
 .form-control, .btn {
     min-height: 38px;
     border-radius: 2px;
+}
+
+.login-form .btn {
+	margin-top: 8%;
 }
 
 .login-btn {        
@@ -85,10 +102,6 @@
     margin: 4px 15px  0 5px;
     min-width: 15px;
 }
-
-/* .input-group-addon .fa{
-    font-size: 18px;
-} */
 
 .text-primary {
     color: var(--lightblue) !important;

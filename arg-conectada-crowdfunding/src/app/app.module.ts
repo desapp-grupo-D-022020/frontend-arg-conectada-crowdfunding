@@ -5,8 +5,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -18,6 +16,8 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { ProjectDetailComponent } from './pages/project-detail/project-detail.component';
 import { LoginComponent } from './components/login/login.component';
 import { DonationComponent } from './pages/donation/donation.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { DonationComponent } from './pages/donation/donation.component';
     ProjectsComponent,
     ProjectDetailComponent,
     LoginComponent,    
-    DonationComponent,    
+    DonationComponent, SignUpComponent, ProfileComponent,    
   ],
   imports: [
     BrowserModule,
