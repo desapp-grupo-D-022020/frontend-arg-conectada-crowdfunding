@@ -20,7 +20,11 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
   errorMsg = '';
 
-  constructor(private authService: AuthService, private tokenService: TokenService, private router: Router, private location:Location) { }
+  submitted: Boolean = false;
+  error: {code: number, message: string} = null;
+
+  constructor(private authService: AuthService, private tokenService: TokenService,
+               private router: Router, private location:Location) { }
 
   ngOnInit() {
     if (this.tokenService.getToken()) {

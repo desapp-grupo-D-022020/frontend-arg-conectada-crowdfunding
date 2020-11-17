@@ -12,8 +12,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 
-import { ProjectsComponent } from './pages/projects/projects.component';
-import { ProjectDetailComponent } from './pages/project-detail/project-detail.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { ProjectDetailComponent } from './components/project-detail/project-detail.component';
 import { LoginComponent } from './components/login/login.component';
 import { DonationComponent } from './pages/donation/donation.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
