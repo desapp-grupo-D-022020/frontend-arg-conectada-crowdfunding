@@ -1,13 +1,12 @@
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal, { SweetAlertIcon } from 'sweetalert2';
-declare var $ : any;
-
 import { Component, OnInit } from '@angular/core';
-
 import { ProjectService } from '../../services/project.service';
+import { TokenService } from '../../services/token.service';
 import { Project } from 'src/app/models/project';
+import { User } from 'src/app/models/user';
+declare var $ : any;
 
 
 @Component({
@@ -18,15 +17,15 @@ import { Project } from 'src/app/models/project';
 export class DonationComponent implements OnInit {
 
   project: Project;
-
+  user: User;
   projectId: number;
-
   donationForm: FormGroup;
   
   constructor(
     private fb:FormBuilder,
     private route: ActivatedRoute,
-    private projectService: ProjectService
+    private projectService: ProjectService,
+    private tokenService: TokenService
   ) { }
 
   /**
@@ -45,6 +44,7 @@ export class DonationComponent implements OnInit {
 
   ngOnInit(): void {
     this.projectId = +this.route.snapshot.paramMap.get('id');
+    this.user = this.tokenService.getUser();
     
     this.getProject();
 
@@ -57,7 +57,7 @@ export class DonationComponent implements OnInit {
   onSubmit(){
     const formData = new FormData();
     formData.append('projectId', `${this.projectId}`);
-    formData.append('userId', '1');
+    formData.append('userId', `${this.user.id}`);
     formData.append('amount', this.getFieldValue('amount'));
     formData.append('comment', this.getFieldValue('comment'));
  

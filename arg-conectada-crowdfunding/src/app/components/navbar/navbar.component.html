@@ -12,11 +12,12 @@
 			<a href="#projects" class="nav-item nav-link" (click)="collapse()" href="#projects" i18n="projects@@projects">Projects</a>
 			<a class="nav-item nav-link" (click)="collapse()" routerLink="login" *ngIf="!isLogin">Login</a>
       <div class="nav-item dropdown" *ngIf="isLogin">
-				<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img
-          src="../../../assets/img/avatar_account.png"
-          class="avatar"
-          alt="Avatar" />
-           User loging <b class="caret"></b></a>
+			<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action">
+			<img *ngIf="user.img; else withImg" src="data:image/gif;base64,{{ user.img }}" class="rounded-circle" width="150" alt="member:{{ user.name }}"/>
+			<ng-template #withImg>
+				<img src="../../../assets/img/avatar_account.png" class="avatar" alt="Avatar"/>
+			</ng-template>
+            User loging <b class="caret"></b></a>
 				<div class="dropdown-menu">
 					<a routerLink="profile" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
 					<a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a>

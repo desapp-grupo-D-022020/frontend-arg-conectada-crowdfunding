@@ -29,7 +29,9 @@ import { ProfileComponent } from './pages/profile/profile.component';
     ProjectsComponent,
     ProjectDetailComponent,
     LoginComponent,    
-    DonationComponent, SignUpComponent, ProfileComponent,    
+    DonationComponent,
+     SignUpComponent, 
+     ProfileComponent
   ],
   imports: [
     BrowserModule,

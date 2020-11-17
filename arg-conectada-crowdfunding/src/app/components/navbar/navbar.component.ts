@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenService } from '../../services/token.service';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/user';
 declare var $ : any;
 
 @Component({
@@ -10,6 +11,7 @@ declare var $ : any;
 })
 export class NavbarComponent implements OnInit {
 
+  user: User;
   isLogin = false;
   roles: string[];
   authority: string;
@@ -21,6 +23,7 @@ export class NavbarComponent implements OnInit {
       this.isLogin = true;
       this.roles = [];
       this.roles = this.tokenService.getAuthorities();
+      this.user = this.tokenService.getUser();
       this.roles.every(rol => {
         if (rol === 'ROLE_ADMIN') {
           this.authority = 'admin';
