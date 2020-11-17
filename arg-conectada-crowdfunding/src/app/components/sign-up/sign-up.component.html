@@ -1,6 +1,6 @@
 <div class="center-form">
   <div class="signup-form">
-    <form name="form" #f="ngForm" (ngSubmit)="onRegister()" novalidate>
+    <form [formGroup]="form" (ngSubmit)="onRegister()" novalidate>
       <div class="form-header">
         <h2>Sign Up</h2>
       </div>
@@ -12,15 +12,26 @@
             </span>
           </div>
           <input
+            [class.is-invalid]="
+              getField('name').invalid && getField('name').touched
+            "
             class="form-control"
             name="name"
             type="text"
             placeholder="Name"
-            [(ngModel)]="form.name"
-            #nombre="ngModel"
-            autocomplete="off"
+            (keypress)="onlyletters($event)"
+            formControlName="name"
+            maxLength="20"
             required="required"
           />
+        </div>
+        <div *ngIf="getField('name').invalid && getField('name').touched">
+          <small *ngIf="getField('name').errors?.minlength" class="text-danger"
+            >Debe contener al menos 3 letras</small
+          >
+          <small *ngIf="getField('name').errors?.required" class="text-danger"
+            >Campo obligatorio</small
+          >
         </div>
       </div>
       <div class="form-group">
@@ -35,11 +46,24 @@
             name="userName"
             type="text"
             placeholder="User Name"
-            [(ngModel)]="form.userName"
-            #nombreUsuario="ngModel"
-            autocomplete="off"
+            formControlName="userName"
+            maxLength="20"
             required="required"
           />
+        </div>
+        <div
+          *ngIf="getField('userName').invalid && getField('userName').touched"
+        >
+          <small
+            *ngIf="getField('userName').errors?.minlength"
+            class="text-danger"
+            >Debe contener al menos 4 caracteres</small
+          >
+          <small
+            *ngIf="getField('userName').errors?.required"
+            class="text-danger"
+            >Campo obligatorio</small
+          >
         </div>
       </div>
       <div class="form-group">
@@ -52,12 +76,19 @@
             name="email"
             placeholder="Email"
             type="email"
-            [(ngModel)]="form.email"
-            #email="ngModel"
+            formControlName="email"
             email
-            autocomplete="off"
+            maxLength="20"
             required="required"
           />
+        </div>
+        <div *ngIf="getField('email').invalid && getField('email').touched">
+          <small *ngIf="getField('email').errors?.required" class="text-danger"
+            >Campo obligatorio</small
+          >
+          <small *ngIf="getField('email').errors?.pattern" class="text-danger"
+            >Escriba un email valido, ejemplo: example@example.com</small
+          >
         </div>
       </div>
       <div class="form-group">
@@ -70,10 +101,18 @@
             type="password"
             name="password"
             placeholder="Password"
-            [(ngModel)]="form.password"
-            #password="ngModel"
+            formControlName="password"
             required="required"
+            maxLength="30"
           />
+        </div>
+        <div *ngIf="getField('password').invalid && getField('password').touched">
+          <small *ngIf="getField('password').errors?.required" class="text-danger"
+            >Campo obligatorio</small
+          >
+          <small *ngIf="getField('password').errors?.minlength" class="text-danger"
+            >Debe contener al menos 8 caracteres</small
+          >
         </div>
       </div>
       <div class="form-group">
@@ -89,15 +128,29 @@
             class="form-control"
             name="confirm_password"
             placeholder="Confirm Password"
+            formControlName="confirmPassword"
+            maxLength="30"
             required="required"
           />
         </div>
+        <div *ngIf="getField('confirmPassword').invalid && getField('confirmPassword').touched">
+          <small *ngIf="getField('confirmPassword').errors?.required" class="text-danger"
+            >Campo obligatorio</small
+          >
+        </div>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block btn-lg" [disabled]="!f.valid">
+        <button
+          type="submit"
+          class="btn btn-primary btn-block btn-lg"
+          [disabled]="!form.valid"
+        >
           Sign Up
         </button>
-        <div *ngIf="f.submitted && isRegisterFail" class="alert alert-danger">
+        <div
+          *ngIf="form.submitted && isRegisterFail"
+          class="alert alert-danger"
+        >
           Fail when creating account: {{ errorMsg }}
         </div>
       </div>

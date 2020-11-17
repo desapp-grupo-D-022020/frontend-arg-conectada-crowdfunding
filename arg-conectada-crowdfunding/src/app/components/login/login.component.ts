@@ -3,7 +3,6 @@ import {Location} from '@angular/common';
 import { UserLogin } from '../../models/user-login';
 import { AuthService } from '../../services/auth.service';
 import { TokenService } from '../../services/token.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -23,8 +22,8 @@ export class LoginComponent implements OnInit {
   submitted: Boolean = false;
   error: {code: number, message: string} = null;
 
-  constructor(private authService: AuthService, private tokenService: TokenService,
-               private router: Router, private location:Location) { }
+  constructor(private authService: AuthService, private tokenService: TokenService
+              , private location:Location) { }
 
   ngOnInit() {
     if (this.tokenService.getToken()) {
@@ -41,11 +40,11 @@ export class LoginComponent implements OnInit {
       this.tokenService.setUser(data.user);
       this.tokenService.setUserName(data.userName);
       this.tokenService.setAuthorities(data.authorities);
-
+  
       this.isLogged = true;
       this.isLoginFail = false;
       this.roles = this.tokenService.getAuthorities();
-
+  
       this.goBack();
     },
       (error: any) => {
@@ -55,7 +54,7 @@ export class LoginComponent implements OnInit {
         this.isLoginFail = true;
       }
     );
-  }
+   }
 
   goBack(): void {
     this.location.back();

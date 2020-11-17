@@ -17,11 +17,11 @@
 			<ng-template #withImg>
 				<img src="../../../assets/img/avatar_account.png" class="avatar" alt="Avatar"/>
 			</ng-template>
-            User loging <b class="caret"></b></a>
+            {{ user.userName }} <b class="caret"></b></a>
 				<div class="dropdown-menu">
 					<a routerLink="profile" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
-					<a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a>
-					<a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a>
+					<!-- <a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a>
+					<a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a> -->
 					<div class="dropdown-divider divider"></div>
 					<a href="#" class="dropdown-item" (click)="logOut()"><i class="material-icons">&#xE8AC;</i> Logout</a>
 				</div>
