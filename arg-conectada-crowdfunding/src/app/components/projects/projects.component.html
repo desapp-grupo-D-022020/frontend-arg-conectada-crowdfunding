@@ -1,65 +1,49 @@
 <section id="projects">
   <div class="container">
     <h2 i18n="projects@@projects" class="content-center mt-0 topmargin-lg">Proyectos</h2>
-    <div class="accordion" id="accordionExample">
+    <div class="accordion" id="accordion">
       <div class="card">
-        
-          <h5 class="mb-0">
-            <button
-              class="btn btn-primary btn-lg btn-block"
-              type="button"
-              data-toggle="collapse"
-              data-target="#collapseOne"
-              aria-expanded="true"
-              aria-controls="collapseOne"
-            >
-              Proyectos abiertos
-            </button>
-          </h5>
-        
-
+        <h5 class="mb-0">
+          <button
+            class="btn btn-primary btn-lg btn-block"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            Proyectos abiertos
+          </button>
+        </h5>
         <div
           id="collapseOne"
           class="collapse"
           aria-labelledby="headingOne"
-          data-parent="#accordionExample"
+          data-parent="#accordion"
         >
-          <div class="card-body">
-            <table class="table table-responsive-md table-bordered">
-              <thead class="thead-lightblue">
-                <tr>
-                  <th i18n="project name@@project name" scope="col">Nombre</th>
-                  <th i18n="place name@@place name" scope="col">Localidad</th>
-                  <th i18n="province name@@province" scope="col">Provincia</th>
-                  <th i18n="conectivity status@@con status" scope="col">
-                    Conectividad
-                  </th>
-                  <th i18n="amount raised@@amount raised" scope="col">
-                    Total recaudado
-                  </th>
-                  <th i18n="pct left@@pct left" scope="col">% faltante</th>
-                  <th i18n="project actions@@project actions" scope="col">
-                    Acciones
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr
-                  *ngFor="let p of projects"
-                  class="table-light"
-                  (click)="collapse()"
-                >
-                  <td>{{ p.name }}</td>
-                  <td>{{ p.placeName }}</td>
-                  <td>{{ p.province }}</td>
-                  <td>{{ p.conectivity }}</td>
-                  <td>{{ p.raised }}</td>
-                  <td>{{ p.pct_left_to_reach_goal }}%</td>
-                  <td><a routerLink="/donation/{{ p.id }}" class="btn btn-outline-primary">Donar</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <app-table-project [projects]="openProjects"></app-table-project>
+        </div>
+      </div>
+      <div class="card">
+        <h5 class="mb-0">
+          <button
+            class="btn btn-primary btn-lg btn-block"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseTwo"
+            aria-expanded="true"
+            aria-controls="collapseTwo"
+          >
+            Proyectos próximos a finalizar
+          </button>
+        </h5>
+        <div
+          id="collapseTwo"
+          class="collapse"
+          aria-labelledby="headingOne"
+          data-parent="#accordion"
+        >
+          <app-table-project [projects]="nearlyClosedProjects"></app-table-project>
         </div>
       </div>
     </div>

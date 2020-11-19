@@ -18,7 +18,6 @@ export class InterceptorService implements HttpInterceptor {
   }
 
   constructor(private tokenService: TokenService) { }
-
 }
 
 export const interceptorProvider = [{provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}];

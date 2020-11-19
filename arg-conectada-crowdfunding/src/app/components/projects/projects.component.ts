@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Project} from '../../models/project';
 import { ProjectService } from '../../services/project.service';
-declare var $ : any;
 
 @Component({
   selector: 'app-projects',
@@ -10,21 +9,24 @@ declare var $ : any;
 })
 export class ProjectsComponent implements OnInit {
   
-  projects: Project[];
+  openProjects: Project[];
+
+  nearlyClosedProjects: Project[];
 
   constructor(private projectService: ProjectService) { }
 
   ngOnInit(): void {
-    this.getProjects();
+    this.getOpenProjects();
+    this.getNearlyClosedProjects();
   }
 
-  getProjects(): void {
-    this.projectService.getProjects()
-        .subscribe(projects => this.projects = projects);
-  }
-  
-  collapse():void{
-    $('.navbar-collapse').collapse('hide');
+  getOpenProjects(): void {
+    this.projectService.getOpenProjects()
+        .subscribe(projects => this.openProjects = projects);
   }
 
+  getNearlyClosedProjects(): void {
+    this.projectService.getNearlyClosedProjects()
+    .subscribe(projects => this.nearlyClosedProjects = projects);
+  }
 }

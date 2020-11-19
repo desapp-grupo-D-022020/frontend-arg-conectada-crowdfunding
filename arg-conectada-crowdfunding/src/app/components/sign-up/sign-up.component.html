@@ -148,7 +148,7 @@
           Sign Up
         </button>
         <div
-          *ngIf="form.submitted && isRegisterFail"
+          *ngIf="isRegisterFail"
           class="alert alert-danger"
         >
           Fail when creating account: {{ errorMsg }}

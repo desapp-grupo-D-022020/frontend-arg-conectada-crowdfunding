@@ -16,13 +16,14 @@ export class ProjectService {
   constructor(private http: HttpClient) { }
 
   /** GET projects from the server */
-  getProjects(): Observable<Project[]> {
+  getOpenProjects(): Observable<Project[]> {
     return this.http.get<Project[]>(`${this.projectsUrl}/getOpenProjects`)
-    // .pipe(
-    //   tap(_ => this.log('fetched projects')),
-    //   catchError(this.handleError<Project[]>('getProjects', []))
-    // );
   }
+
+  getNearlyClosedProjects(): Observable<Project[]> {
+    return this.http.get<Project[]>(`${this.projectsUrl}/getNearlyClosedProjects`)
+  }
+
 
   getProject(id: number): Observable<Project> {
     const url = `${this.projectsUrl}/get/${id}`;

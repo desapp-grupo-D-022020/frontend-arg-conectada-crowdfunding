@@ -1,17 +1,3 @@
-table { 
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-   background-color: #dddddd;
-}
-
 .btn-primary {
     background-color: var(--lightblue) !important;
 }
@@ -28,13 +14,4 @@ tr:nth-child(even) {
 .btn-outline-primary:hover {
     color: var(--white) !important;
     background-color: var(--lightblue) !important;
-}
-
-.thead-lightblue {
-    color: var(--white);
-    background-color: var(--lightblue);
-}
-
-@media (min-width: 770px) {
-
 }

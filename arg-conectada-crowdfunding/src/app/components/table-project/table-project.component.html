@@ -1,0 +1,42 @@
+<div class="card-body">
+    <table class="table table-responsive-md table-bordered">
+      <thead class="thead-lightblue">
+        <tr>
+          <th i18n="project name@@project name" scope="col">Nombre</th>
+          <th i18n="place name@@place name" scope="col">Localidad</th>
+          <th i18n="province name@@province" scope="col">Provincia</th>
+          <th i18n="conectivity status@@con status" scope="col">
+            Conectividad
+          </th>
+          <th i18n="amount raised@@amount raised" scope="col">
+            Total recaudado
+          </th>
+          <th i18n="pct left@@pct left" scope="col">% faltante</th>
+          <th i18n="project actions@@project actions" scope="col">
+            Acciones
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let p of projects"
+          class="table-light"
+          (click)="collapse()"
+        >
+          <td>{{ p.name }}</td>
+          <td>{{ p.placeName }}</td>
+          <td>{{ p.province }}</td>
+          <td>{{ p.conectivity }}</td>
+          <td>{{ p.raised }}</td>
+          <td>{{ p.pct_left_to_reach_goal }}%</td>
+          <td>
+            <a
+              routerLink="/donation/{{ p.id }}"
+              class="btn btn-outline-primary"
+              >Donar</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
