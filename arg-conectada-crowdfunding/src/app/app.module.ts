@@ -32,8 +32,10 @@ import { TableProjectComponent } from './components/table-project/table-project.
     ProjectDetailComponent,
     LoginComponent,    
     DonationComponent,
-     SignUpComponent, 
-     ProfileComponent, AboutUsComponent, TableProjectComponent
+    SignUpComponent, 
+    ProfileComponent,
+    AboutUsComponent, 
+    TableProjectComponent
   ],
   imports: [
     BrowserModule,

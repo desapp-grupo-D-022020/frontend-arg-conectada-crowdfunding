@@ -10,10 +10,9 @@ declare var $ : any;
 export class TableProjectComponent implements OnInit {
   @Input() projects:Project[];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   collapse():void{
     $('.navbar-collapse').collapse('hide');

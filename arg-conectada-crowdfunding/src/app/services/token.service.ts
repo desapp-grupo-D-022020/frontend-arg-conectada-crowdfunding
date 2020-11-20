@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { UserService } from 'src/app/services/user.service';
 
 const TOKEN_KEY = 'AuthToken';
 const USERNAME_KEY = 'AuthUserName';
@@ -13,7 +12,7 @@ export class TokenService {
 
   roles: Array<string> = [];
 
-  constructor(private userService: UserService) { }
+  constructor() { }
 
   public setToken(token: string): void {
     window.sessionStorage.removeItem(TOKEN_KEY);

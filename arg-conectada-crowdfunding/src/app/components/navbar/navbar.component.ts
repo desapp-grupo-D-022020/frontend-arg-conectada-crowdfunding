@@ -17,7 +17,8 @@ export class NavbarComponent implements OnInit {
   roles: string[];
   authority: string;
 
-  constructor(private tokenService: TokenService, private userService: UserService, private router: Router) { }
+  constructor(private tokenService: TokenService, 
+    private userService: UserService, private router: Router) { }
 
   ngOnInit() {
     if (this.tokenService.getToken()) {
