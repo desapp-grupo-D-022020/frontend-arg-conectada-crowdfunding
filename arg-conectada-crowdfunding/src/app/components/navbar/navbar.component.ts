@@ -3,6 +3,7 @@ import { TokenService } from '../../services/token.service';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
+import { Observable } from 'rxjs';
 declare var $ : any;
 
 @Component({
@@ -12,7 +13,7 @@ declare var $ : any;
 })
 export class NavbarComponent implements OnInit {
 
-  user: User;
+  $user: Observable<User>;
   isLogin = false;
   roles: string[];
   authority: string;
@@ -44,9 +45,8 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['home']);
   }
 
-  getUser(): void {
-    this.userService.getUser(this.tokenService.getUserId())
-        .subscribe(user => this.user = user);
+  getUser(){
+    this.$user = this.userService.getUser(this.tokenService.getUserId());
   }
 
   collapse():void{
