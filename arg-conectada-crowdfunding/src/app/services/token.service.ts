@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { User } from '../models/user';
+import { UserService } from 'src/app/services/user.service';
 
 const TOKEN_KEY = 'AuthToken';
 const USERNAME_KEY = 'AuthUserName';
-const USER_KEY = 'AuthUser';
+const USERID_KEY = 'AuthUserId';
 const AUTHORITIES_KEY = 'AutAuthorities';
 
 @Injectable({
@@ -13,7 +13,7 @@ export class TokenService {
 
   roles: Array<string> = [];
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   public setToken(token: string): void {
     window.sessionStorage.removeItem(TOKEN_KEY);
@@ -33,13 +33,13 @@ export class TokenService {
     return sessionStorage.getItem(USERNAME_KEY);
   }
 
-  public setUser(user: User): void {
-    window.sessionStorage.removeItem(USER_KEY);
-    window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
+  public setUserId(userId: number): void {
+    window.sessionStorage.removeItem(USERID_KEY);
+    window.sessionStorage.setItem(USERID_KEY, JSON.stringify(userId));
   }
 
-  public getUser(): User {
-    return JSON.parse(sessionStorage.getItem(USER_KEY));
+  public getUserId(): number {
+    return JSON.parse(sessionStorage.getItem(USERID_KEY));
   }
 
   public setAuthorities(authorities: string[]): void {
