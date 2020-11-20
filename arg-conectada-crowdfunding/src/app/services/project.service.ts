@@ -66,6 +66,7 @@ export class ProjectService {
 
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
-    //TODO: implement message service? this.messageService.add(`ProjectService: ${message}`);
+    console.log(message);
   }
+  
 }

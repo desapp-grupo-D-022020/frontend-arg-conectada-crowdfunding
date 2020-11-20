@@ -1,0 +1,23 @@
+<div class="card-body">
+    <table class="table table-responsive-md table-bordered">
+      <thead class="thead-lightblue">
+        <tr>
+          <th scope="col">Project Name</th>
+          <th scope="col">Date</th>
+          <th scope="col">Points</th>
+          <th scope="col">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let donation of donations"
+          class="table-light"
+        >
+          <td>{{ donation.projectName }}</td>
+          <td>{{ donation.date }}</td>
+          <td>{{ donation.points }}</td>
+          <td>{{ donation.amount }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

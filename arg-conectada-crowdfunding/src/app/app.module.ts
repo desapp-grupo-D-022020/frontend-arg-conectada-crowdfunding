@@ -20,6 +20,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { TableProjectComponent } from './components/table-project/table-project.component';
+import { TableDonationComponent } from './components/table-donation/table-donation.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { TableProjectComponent } from './components/table-project/table-project.
     SignUpComponent, 
     ProfileComponent,
     AboutUsComponent, 
-    TableProjectComponent
+    TableProjectComponent, TableDonationComponent
   ],
   imports: [
     BrowserModule,
