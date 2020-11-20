@@ -1,5 +1,5 @@
 <div class="center-form">
-  <div class="container box" *ngIf="project">
+  <div class="box" *ngIf="project">
     <h2>{{ project.name }}</h2>
     <form [formGroup]="donationForm" (ngSubmit)="onSubmit()" class="row">
       <div class="col-md-12">

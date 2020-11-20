@@ -5,9 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../../services/project.service';
 import { TokenService } from '../../services/token.service';
 import { Project } from 'src/app/models/project';
-import { User } from 'src/app/models/user';
 declare var $ : any;
-
 
 @Component({
   selector: 'app-donation',
@@ -17,7 +15,7 @@ declare var $ : any;
 export class DonationComponent implements OnInit {
 
   project: Project;
-  user: User;
+  userId: number;
   projectId: number;
   donationForm: FormGroup;
   
@@ -44,7 +42,7 @@ export class DonationComponent implements OnInit {
 
   ngOnInit(): void {
     this.projectId = +this.route.snapshot.paramMap.get('id');
-    this.user = this.tokenService.getUser();
+    this.userId = this.tokenService.getUserId();
     
     this.getProject();
 
@@ -57,7 +55,7 @@ export class DonationComponent implements OnInit {
   onSubmit(){
     const formData = new FormData();
     formData.append('projectId', `${this.projectId}`);
-    formData.append('userId', `${this.user.id}`);
+    formData.append('userId', `${this.userId}`);
     formData.append('amount', this.getFieldValue('amount'));
     formData.append('comment', this.getFieldValue('comment'));
  

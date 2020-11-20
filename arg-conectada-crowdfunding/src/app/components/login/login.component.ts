@@ -37,8 +37,8 @@ export class LoginComponent implements OnInit {
     this.user = new UserLogin(this.form.userName, this.form.password);
     this.authService.login(this.user).subscribe(data => {
       this.tokenService.setToken(data.token);
-      this.tokenService.setUser(data.user);
       this.tokenService.setUserName(data.userName);
+      this.tokenService.setUserId(data.userId);
       this.tokenService.setAuthorities(data.authorities);
   
       this.isLogged = true;
