@@ -22,6 +22,11 @@ export class UserService {
     );
   }
 
+  changeUserPicture(data){
+    const url = `${this.projectsUrl}/changeProfilePicture`;
+    return this.http.put<any>(url, data);
+  }
+
   /**
     * Handle Http operation that failed.
     * Let the app continue.

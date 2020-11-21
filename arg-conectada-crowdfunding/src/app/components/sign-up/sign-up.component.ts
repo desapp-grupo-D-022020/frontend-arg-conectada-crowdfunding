@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { NewUser } from '../../models/new-user';
-import { Location } from '@angular/common';
 import Swal, { SweetAlertIcon } from 'sweetalert2';
 declare var $ : any;
 
@@ -19,8 +18,7 @@ export class SignUpComponent implements OnInit {
   isRegisterFail = false;
   errorMsg = '';
 
-  constructor(private fb:FormBuilder, private authService: AuthService,
-              private location:Location) { }
+  constructor(private fb:FormBuilder, private authService: AuthService) { }
 
   /**
    * Retorna el valor del campo del formulario con el mismo nombre que el pasado por parámetro

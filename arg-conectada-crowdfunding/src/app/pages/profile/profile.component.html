@@ -15,10 +15,25 @@
               <ng-template #withImg>
                 <img src="../../../assets/img/avatardefaultprofile.png" class="rounded-circle" width="150" alt="member:{{ user.name }}"/>
               </ng-template>
-              <div class="mt-3">
-                <h4>{{ user.name }}</h4>
-                <button class="btn btn-outline-primary">Upload Photo</button>
-              </div>
+              <form [formGroup]="form" (ngSubmit)="onSubmit()" class="mt-3" enctype="multipart/form-data">
+                <div class="form-group">
+                  <h4>{{ user.name }}</h4>
+                  <label for="file" class="label-file">
+                    Attach file
+                  </label>
+                  {{ info_file }}
+                  <input
+                    #file
+                    class="form-control-file btn-send"
+                    (change)="onFileChanged()"
+                    type="file"
+                    id="file"
+                    size="80"
+                    accept="image/png, image/jpeg"
+                  />
+                </div>
+                  <button class="btn btn-outline-primary" type="submit" [disabled]="!haveFile">Upload Photo</button>
+              </form>
             </div>
           </div>
         </div>
