@@ -123,7 +123,7 @@ export class ProfileComponent implements OnInit {
       error => { this.alert('Failed to change profile picture! Excuse me, please try again later', 'error', 3500), console.log('Error!', error) },
     );
     this.formReset();
-    setTimeout(()=>{ location.reload(); }, 3700)
+    setTimeout(()=>{ location.reload(); }, 3500)
   } 
 
 }

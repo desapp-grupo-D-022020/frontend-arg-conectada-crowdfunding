@@ -1,6 +1,7 @@
-.container-profile{
+.container-profile {
     background-image: url('../../../assets/img/banner.jpg');
-    height: 100%;
+    background-size: cover;       
+    height: 100vh;
     width: 100%;
 }
 
