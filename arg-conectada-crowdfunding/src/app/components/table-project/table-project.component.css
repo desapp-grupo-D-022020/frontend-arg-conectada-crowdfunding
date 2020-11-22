@@ -2,6 +2,13 @@ table {
     width: 100%;
 }
 
+.btn-center {
+    border: 1px solid #dddddd;
+    display: flex;        
+    justify-content: center;
+    align-items: flex-end;
+}
+
 td, th {
     border: 1px solid #dddddd;
     text-align: left;

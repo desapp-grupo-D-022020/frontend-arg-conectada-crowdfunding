@@ -13,8 +13,9 @@
           </th>
           <th i18n="pct left@@pct left" scope="col">% faltante</th>
           <th i18n="project actions@@project actions" scope="col">
-            Acciones
+            Donar
           </th>
+          <th i18n="project actions@@project actions" scope="col">Finalizar Proyecto</th>
         </tr>
       </thead>
       <tbody>
@@ -36,7 +37,17 @@
               >Donar</a
             >
           </td>
+          <td class="btn-center"> 
+            <a
+              (click)="closeProject(p.id)"
+              class="btn btn-outline-danger"
+              >Finalizar</a
+            >
+          </td>
         </tr>
       </tbody>
     </table>
+    <div>
+      <button class="btn btn-outline-primary" routerLink="/newProject">Nuevo Proyecto</button>
+    </div>
   </div>

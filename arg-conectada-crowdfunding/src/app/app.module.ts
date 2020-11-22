@@ -21,6 +21,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { TableProjectComponent } from './components/table-project/table-project.component';
 import { TableDonationComponent } from './components/table-donation/table-donation.component';
+import { interceptorProvider } from './services/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { TableDonationComponent } from './components/table-donation/table-donati
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

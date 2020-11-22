@@ -24,7 +24,6 @@ export class ProjectService {
     return this.http.get<Project[]>(`${this.projectsUrl}/getNearlyClosedProjects`)
   }
 
-
   getProject(id: number): Observable<Project> {
     const url = `${this.projectsUrl}/get/${id}`;
     return this.http.get<Project>(url).pipe(
@@ -33,12 +32,17 @@ export class ProjectService {
     );
   }
 
+  closeProject(id: number) {
+    const url = `${this.projectsUrl}/closeProject/${id}`;
+    return this.http.put<any>(url, id);
+  }
+
   /**
    * Envia el formulario de contacto de la view del componente contact a 
    * la api para ser enviada por email
    * @param dataContact el formulario a enviar
    */
-  donation(dataContact){
+  donation(dataContact) {
     const path = `${this.projectsUrl}/donate`;
     return this.http.put<any>(path, dataContact);
   }

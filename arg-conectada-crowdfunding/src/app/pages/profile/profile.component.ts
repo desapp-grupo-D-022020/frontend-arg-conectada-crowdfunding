@@ -46,8 +46,9 @@ export class ProfileComponent implements OnInit {
     this.roles.every(rol => {
       if (rol === 'ROLE_ADMIN') {
         this.role = 'Admin';
+      }else{
+        this.role = 'User';
       }
-      this.role = 'User';
     });
     this.info_file = "no attachment";
     this.haveFile = false;
