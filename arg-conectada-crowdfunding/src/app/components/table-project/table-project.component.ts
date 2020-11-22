@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ProjectService } from '../../services/project.service';
 import {Project} from '../../models/project';
 import Swal, { SweetAlertIcon } from 'sweetalert2';
+import { TokenService } from 'src/app/services/token.service';
 declare var $ : any;
 
 @Component({
@@ -11,10 +12,17 @@ declare var $ : any;
 })
 export class TableProjectComponent implements OnInit {
   @Input() projects:Project[];
+  isLogin = false;
+  role: string;
 
-  constructor(private projectService: ProjectService) {}
+  constructor(private projectService: ProjectService, private tokenService: TokenService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.tokenService.getToken()) {
+      this.isLogin = true;;
+      this.role = this.tokenService.getRoleUser();
+    }
+  }
 
   collapse():void{
     $('.navbar-collapse').collapse('hide');

@@ -10,7 +10,8 @@ const AUTHORITIES_KEY = 'AutAuthorities';
 })
 export class TokenService {
 
-  roles: Array<string> = [];
+  private roles: Array<string> = [];
+  private role: string;
 
   constructor() { }
 
@@ -54,6 +55,15 @@ export class TokenService {
       });
     }
     return this.roles;
+  }
+
+  public getRoleUser(): string {
+    if (this.getAuthorities().includes('ROLE_ADMIN')) {
+      this.role = 'Admin';
+    }else{
+      this.role = 'User';
+    }
+    return this.role;
   }
 
   public logOut(): void {

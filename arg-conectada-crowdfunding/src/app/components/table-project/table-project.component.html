@@ -12,10 +12,14 @@
             Total recaudado
           </th>
           <th i18n="pct left@@pct left" scope="col">% faltante</th>
-          <th i18n="project actions@@project actions" scope="col">
+          <th i18n="project actions@@project actions" scope="col"
+          *ngIf="role==='User'|| role==='Admin' && isLogin"
+          >
             Donar
           </th>
-          <th i18n="project actions@@project actions" scope="col">Finalizar Proyecto</th>
+          <th i18n="project actions@@project actions" scope="col" 
+          *ngIf="role==='Admin' && isLogin">
+          Finalizar Proyecto</th>
         </tr>
       </thead>
       <tbody>
@@ -30,14 +34,14 @@
           <td>{{ p.conectivity }}</td>
           <td>{{ p.raised }}</td>
           <td>{{ p.pct_left_to_reach_goal }}%</td>
-          <td>
+          <td *ngIf="role==='User'|| role==='Admin' && isLogin">
             <a
               routerLink="/donation/{{ p.id }}"
               class="btn btn-outline-primary"
               >Donar</a
             >
           </td>
-          <td class="btn-center"> 
+          <td class="btn-center" *ngIf="role==='Admin' && isLogin"> 
             <a
               (click)="closeProject(p.id)"
               class="btn btn-outline-danger"
@@ -47,7 +51,7 @@
         </tr>
       </tbody>
     </table>
-    <div>
+    <div *ngIf="role==='Admin' && isLogin">
       <button class="btn btn-outline-primary" routerLink="/newProject">Nuevo Proyecto</button>
     </div>
   </div>

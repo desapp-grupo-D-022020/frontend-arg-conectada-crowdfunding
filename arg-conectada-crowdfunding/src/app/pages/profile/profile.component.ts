@@ -22,7 +22,6 @@ export class ProfileComponent implements OnInit {
   $donations: Observable<Donation[]>;
   info_file: string;
   role: string;
-  roles: string[] = [];
   form: FormGroup;
   haveFile: boolean;
   
@@ -42,14 +41,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.getUser();
     this.getDonations();
-    this.roles = this.tokenService.getAuthorities();
-    this.roles.every(rol => {
-      if (rol === 'ROLE_ADMIN') {
-        this.role = 'Admin';
-      }else{
-        this.role = 'User';
-      }
-    });
+    this.role = this.tokenService.getRoleUser();
     this.info_file = "no attachment";
     this.haveFile = false;
 
@@ -116,8 +108,6 @@ export class ProfileComponent implements OnInit {
     const formData = new FormData();
     formData.append('img', this.getFieldValue('file'));
     formData.append('userId', `${this.tokenService.getUserId()}`);
-    console.log(this.getFieldValue('file'));
-    console.log(`${this.tokenService.getUserId()}`);
     this.userService.changeUserPicture(formData)
     .subscribe(
       response => { this.alert('Image changed successfully!', 'success', 2800), console.log('Success!', response) }, 

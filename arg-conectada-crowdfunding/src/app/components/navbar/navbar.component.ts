@@ -24,17 +24,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     if (this.tokenService.getToken()) {
       this.getUser();
-      this.isLogin = true;
-      this.roles = [];
-      this.roles = this.tokenService.getAuthorities();
-      this.roles.every(rol => {
-        if (rol === 'ROLE_ADMIN') {
-          this.authority = 'admin';
-          return false;
-        }
-        this.authority = 'user';
-        return true;
-      });
+      this.isLogin = true;;
     }
   }
 
