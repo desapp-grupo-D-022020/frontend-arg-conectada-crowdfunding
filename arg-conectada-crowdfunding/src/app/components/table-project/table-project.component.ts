@@ -1,8 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ProjectService } from '../../services/project.service';
-import {Project} from '../../models/project';
 import Swal, { SweetAlertIcon } from 'sweetalert2';
 import { TokenService } from 'src/app/services/token.service';
+import { Observable } from 'rxjs';
 declare var $ : any;
 
 @Component({
@@ -11,13 +11,18 @@ declare var $ : any;
   styleUrls: ['./table-project.component.css']
 })
 export class TableProjectComponent implements OnInit {
-  @Input() projects:Project[];
+  @Input() pagesProjects: Observable<any>;
+  @Output() spreadPage = new EventEmitter<number>();
+
   isLogin = false;
   role: string;
+  totalPages: Array<number>;
+  page = 0;
 
   constructor(private projectService: ProjectService, private tokenService: TokenService) {}
 
   ngOnInit(): void {
+    this.loadProjects();
     if (this.tokenService.getToken()) {
       this.isLogin = true;;
       this.role = this.tokenService.getRoleUser();
@@ -26,6 +31,33 @@ export class TableProjectComponent implements OnInit {
 
   collapse():void{
     $('.navbar-collapse').collapse('hide');
+  }
+
+  loadProjects() {
+    this.pagesProjects.subscribe(
+      data => {
+        this.totalPages = new Array(data['totalPages']);
+      });
+    }
+
+  rewind(): void {
+      this.page--;
+      this.spreadPage.emit(this.page);
+      console.log(this.page);
+      this.loadProjects();
+  }
+  
+  forward(): void {
+      this.page++;
+      this.spreadPage.emit(this.page);
+      console.log(this.page);
+      this.loadProjects();
+  }
+  
+  setPage(page: number): void {
+    this.page = page;
+    this.spreadPage.emit(this.page);
+    this.loadProjects();
   }
 
   closeProject(id:number){

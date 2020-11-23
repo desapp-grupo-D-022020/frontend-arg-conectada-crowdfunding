@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Project} from '../../models/project';
+import { Observable } from 'rxjs';
 import { ProjectService } from '../../services/project.service';
 
 @Component({
@@ -9,24 +9,38 @@ import { ProjectService } from '../../services/project.service';
 })
 export class ProjectsComponent implements OnInit {
   
-  openProjects: Project[];
+  pagesOpenProjects: Observable<any>;
+  pagesNearlyClosedProjects: Observable<any>;
 
-  nearlyClosedProjects: Project[];
+  pageNumberOpenProjects: number = 0;
+
+  pageNumberNearlyClosedProjects: number = 0;
 
   constructor(private projectService: ProjectService) { }
 
   ngOnInit(): void {
-    this.getOpenProjects();
-    this.getNearlyClosedProjects();
+    this.getOpenProjects(0);
+    this.getNearlyClosedProjects(0);
   }
 
-  getOpenProjects(): void {
-    this.projectService.getOpenProjects()
-        .subscribe(projects => this.openProjects = projects);
+  getOpenProjects(page: number): void {
+    this.pagesOpenProjects = this.projectService.getOpenProjects(page);
   }
 
-  getNearlyClosedProjects(): void {
-    this.projectService.getNearlyClosedProjects()
-    .subscribe(projects => this.nearlyClosedProjects = projects);
+  getNearlyClosedProjects(page: number): void {
+    this.pagesNearlyClosedProjects = this.projectService.getNearlyClosedProjects(page);
   }
+
+  processSpreadPageOpenProjects(page: number) {
+    this.pageNumberOpenProjects = page;
+    this.getOpenProjects(this.pageNumberOpenProjects);
+    console.log(page);
+  }
+
+  processSpreadPageNearlyClosedProjects(page: number) {
+    this.pageNumberNearlyClosedProjects = page;
+    this.getNearlyClosedProjects(this.pageNumberNearlyClosedProjects);
+    console.log(page);
+  }
+
 }

@@ -1,6 +1,8 @@
 <section id="projects">
   <div class="container">
-    <h2 i18n="projects@@projects" class="content-center mt-0 topmargin-lg">Proyectos</h2>
+    <h2 i18n="projects@@projects" class="content-center mt-0 topmargin-lg">
+      Proyectos
+    </h2>
     <div class="accordion" id="accordion">
       <div class="card">
         <h5 class="mb-0">
@@ -21,7 +23,10 @@
           aria-labelledby="headingOne"
           data-parent="#accordion"
         >
-          <app-table-project [projects]="openProjects"></app-table-project>
+          <app-table-project
+            [pagesProjects]="pagesOpenProjects"
+            (spreadPage)="processSpreadPageOpenProjects($event)"
+          ></app-table-project>
         </div>
       </div>
       <div class="card">
@@ -43,7 +48,10 @@
           aria-labelledby="headingOne"
           data-parent="#accordion"
         >
-          <app-table-project [projects]="nearlyClosedProjects"></app-table-project>
+          <app-table-project
+            [pagesProjects]="pagesNearlyClosedProjects"
+            (spreadPage)="processSpreadPageNearlyClosedProjects($event)"
+          ></app-table-project>
         </div>
       </div>
     </div>

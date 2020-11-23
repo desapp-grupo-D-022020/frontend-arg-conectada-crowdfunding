@@ -16,12 +16,12 @@ export class ProjectService {
   constructor(private http: HttpClient) { }
 
   /** GET projects from the server */
-  getOpenProjects(): Observable<Project[]> {
-    return this.http.get<Project[]>(`${this.projectsUrl}/getOpenProjects`)
+  getOpenProjects(page: number): Observable<any> {
+    return this.http.get<any>(`${this.projectsUrl}/getOpenProjects?` + `page=${page}`)
   }
 
-  getNearlyClosedProjects(): Observable<Project[]> {
-    return this.http.get<Project[]>(`${this.projectsUrl}/getNearlyClosedProjects`)
+  getNearlyClosedProjects(page: number): Observable<any> {
+    return this.http.get<any>(`${this.projectsUrl}/getNearlyClosedProjects?` + `page=${page}`)
   }
 
   getProject(id: number): Observable<Project> {
