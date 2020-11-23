@@ -37,6 +37,12 @@ export class ProjectService {
     return this.http.put<any>(url, id);
   }
 
+  createProject(data) {
+    const url = `${this.projectsUrl}/createProject`;
+    return this.http.post<any>(url, data);
+  }
+
+
   /**
    * Envia el formulario de contacto de la view del componente contact a 
    * la api para ser enviada por email

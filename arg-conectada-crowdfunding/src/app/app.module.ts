@@ -22,6 +22,7 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { TableProjectComponent } from './components/table-project/table-project.component';
 import { TableDonationComponent } from './components/table-donation/table-donation.component';
 import { interceptorProvider } from './services/interceptor.service';
+import { CreateProjectComponent } from './components/create-project/create-project.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,9 @@ import { interceptorProvider } from './services/interceptor.service';
     SignUpComponent, 
     ProfileComponent,
     AboutUsComponent, 
-    TableProjectComponent, TableDonationComponent
+    TableProjectComponent, 
+    TableDonationComponent, 
+    CreateProjectComponent,
   ],
   imports: [
     BrowserModule,
