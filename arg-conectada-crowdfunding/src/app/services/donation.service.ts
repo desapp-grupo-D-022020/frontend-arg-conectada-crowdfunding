@@ -14,11 +14,11 @@ export class DonationService {
 
   constructor(private http: HttpClient) { }
 
-  getDonationsFromUser(id: number): Observable<Donation[]> {
-    const url = `${this.projectsUrl}/getDonationsFromUser/${id}`;
-    return this.http.get<Donation[]>(url).pipe(
+  getDonationsFromUser(page: number, id: number): Observable<any> {
+    const url = `${this.projectsUrl}/getDonationsFromUser/${id}?` + `page=${page}`;
+    return this.http.get<any>(url).pipe(
       tap(_ => this.log(`fetched donation id=${id}`)),
-      catchError(this.handleError<Donation[]>(`getDonation id=${id}`))
+      catchError(this.handleError<any>(`getDonation id=${id}`))
     );
   }
 

@@ -65,7 +65,7 @@ export class DonationComponent implements OnInit {
        error => { this.alert('Error al realizar la donación! Disculpe, vuelva a intentarlo más tarde', 'error', 3500), console.log('Error!', error) },
     );
     this.resetContactForm();
-    this.goBack();
+    setTimeout(()=>{ this.goBack(); }, 3600)
   }
 
   resetContactForm(){

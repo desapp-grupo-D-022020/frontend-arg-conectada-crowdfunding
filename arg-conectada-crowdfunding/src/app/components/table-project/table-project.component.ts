@@ -37,8 +37,9 @@ export class TableProjectComponent implements OnInit {
     this.pagesProjects.subscribe(
       data => {
         this.totalPages = new Array(data['totalPages']);
-      });
-    }
+      }
+    );
+  }
 
   rewind(): void {
       this.page--;

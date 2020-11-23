@@ -19,8 +19,8 @@ export class ProjectsComponent implements OnInit {
   constructor(private projectService: ProjectService) { }
 
   ngOnInit(): void {
-    this.getOpenProjects(0);
-    this.getNearlyClosedProjects(0);
+    this.getOpenProjects(this.pageNumberOpenProjects);
+    this.getNearlyClosedProjects(this.pageNumberNearlyClosedProjects);
   }
 
   getOpenProjects(page: number): void {
@@ -34,13 +34,11 @@ export class ProjectsComponent implements OnInit {
   processSpreadPageOpenProjects(page: number) {
     this.pageNumberOpenProjects = page;
     this.getOpenProjects(this.pageNumberOpenProjects);
-    console.log(page);
   }
 
   processSpreadPageNearlyClosedProjects(page: number) {
     this.pageNumberNearlyClosedProjects = page;
     this.getNearlyClosedProjects(this.pageNumberNearlyClosedProjects);
-    console.log(page);
   }
 
 }

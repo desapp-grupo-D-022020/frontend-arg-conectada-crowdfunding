@@ -3,7 +3,6 @@ import { TokenService } from '../../services/token.service';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 import { Observable } from 'rxjs';
-import { Donation } from 'src/app/models/donation';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import Swal, { SweetAlertIcon } from 'sweetalert2';
 import { DonationService } from 'src/app/services/donation.service';
@@ -19,12 +18,13 @@ export class ProfileComponent implements OnInit {
 
   @ViewChild('file') fileInput;
   $user: Observable<User>;
-  $donations: Observable<Donation[]>;
+  pagesDonations: Observable<any>;
   info_file: string;
   role: string;
   form: FormGroup;
   haveFile: boolean;
-  
+
+  pageDonationNumber: number = 0;  
 
   constructor(private tokenService: TokenService, private userService: UserService,
     private donationService: DonationService, private fb:FormBuilder) { }
@@ -39,8 +39,8 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getDonations(this.pageDonationNumber);
     this.getUser();
-    this.getDonations();
     this.role = this.tokenService.getRoleUser();
     this.info_file = "no attachment";
     this.haveFile = false;
@@ -50,13 +50,18 @@ export class ProfileComponent implements OnInit {
       }
     );
   }
+  
+  getDonations(page: number): void {
+    this.pagesDonations = this.donationService.getDonationsFromUser(page, this.tokenService.getUserId());
+  }
 
   getUser(): void {
     this.$user = this.userService.getUser(this.tokenService.getUserId());
   }
 
-  getDonations(): void {
-    this.$donations = this.donationService.getDonationsFromUser(this.tokenService.getUserId());
+  processSpreadPageDonations(page: number) {
+    this.pageDonationNumber = page;
+    this.getDonations(this.pageDonationNumber);
   }
 
   onFileChanged() {
