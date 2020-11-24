@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es-AR" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="9c11bb7f7da94953142c40b651ab188cefadecfb" datatype="html">
+        <source>Conectando cada vez a más argentinos</source>
+        <target>Connecting more and more Argentines</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="974c2811dfc1cbdfd069e2591ab106feed5899d1" datatype="html">
+        <source>Conoce más</source>
+        <target>Learn more</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="584dd93b979f6ce2141a4735e6d37a3e6aeb0bfd" datatype="html">
+        <source>ERROR 404 - PÁGINA NO ENCONTRADA</source>
+       <target>ERROR 404 PAGE NOT FOUND</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/not-found/not-found.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="45a4b797ab6931fb10ed4ad33c49a77582db3db8" datatype="html">
+        <source>Inicio</source>
+        <target>Home</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2ad7ee9c663d35624fe3ad0eb6143f6eb2406842" datatype="html">
+        <source>Acerca de nosotros</source>
+        <target>About us</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5e988b18de77ccfe953006a79834e26e714a0e27" datatype="html">
+        <source>Proyectos</source>
+        <target>Projects</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="178aa14d8ee687d41b9be03758b6983fcf628e4e" datatype="html">
+        <source>Iniciar sesión</source>
+        <target>Login</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e1ec80d1cecc8c466276dce7fc8caa95a6818ffe" datatype="html">
+        <source>Cerrar sesión</source>
+        <target>LogOut</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d3733fe8a56704aef19b372584a6c19f9d0020cf" datatype="html">
+        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Perfil</source>
+        <target><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Profile</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="874e7913204e69d20c34a8320ada152feacac135" datatype="html">
+        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Cerrar sesión</source>
+        <target><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> LogOut</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="61ed012bedc37c2b28d81c9f24cf2b793bec9bee" datatype="html">
+        <source>©Copyright 2020 Argentina Conectada - Todos los derechos reservados.</source>
+        <target>©Copyright 2020 Argentina Conectada - All rights reserved.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/footer/footer.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projects" datatype="html">
+        <source>
+      Proyectos
+    </source>
+    <target>Projects</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/projects/projects.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">projects</note>
+      </trans-unit>
+      <trans-unit id="9ebe9f4d789a73851924fb2b93d6b3a8a1499a5f" datatype="html">
+        <source>
+            Proyectos abiertos
+          </source>
+          <target>Open Projects</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/projects/projects.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a4a3b25b48b0095a03f6962b7f21f34d703a2af0" datatype="html">
+        <source>
+            Proyectos próximos a finalizar
+          </source>
+          <target>Nearly closed projects</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/projects/projects.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="db6f7c2e1d6a5659ce5a2d6f6ab840791252a5ea" datatype="html">
+        <source>nombre:
+        <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+      </source>
+      <target>name:
+        <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/project-detail/project-detail.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6765b4c916060f6bc42d9bb69e80377dbcb5e4e9" datatype="html">
+        <source>Iniciar sesión</source>
+        <target>Login</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d879b339e85a69c78deecff089052e5a1d2bd2af" datatype="html">
+        <source>
+        Registrarse
+        </source>
+        <target>Sign up</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="23c0963ef29618ba1fd23940710d8b3c7ecd039e" datatype="html">
+        <source><x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input/&gt;"/> Recuérdame</source>
+        <target><x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input/&gt;"/> Remember me</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a1fd4ad39ee4659f7998ff92eeed4e0970f96235" datatype="html">
+        <source>¿Olvidó su contraseña?</source>
+        <target>Forgot your password?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="211b3d565edda8a7024b1fedba183719de742405" datatype="html">
+        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/>o<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/></source>
+        <target><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/>or<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2f8f2941508b27630225e4836da734c159c938e6" datatype="html">
+        <source>
+        ¿No tienes una cuenta?
+        <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>¡Regístrate ahora!<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
+      </source>
+      <target>
+        Don't have an account?
+        <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Register Now!<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
+      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c328f1ac54b4169b71833d38b2fcad3d65eb23b7" datatype="html">
+        <source> Monto: </source>
+        <target> Amount: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/donation/donation.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="24f3511643c734ab825702be6c1a9274bb1ab609" datatype="html">
+        <source>Campo obligatorio</source>
+        <target>Obligatory field</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/donation/donation.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/donation/donation.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/sign-up/sign-up.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/sign-up/sign-up.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/sign-up/sign-up.component.html</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/sign-up/sign-up.component.html</context>
+          <context context-type="linenumber">116</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/sign-up/sign-up.component.html</context>
+          <context context-type="linenumber">144</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-project/create-project.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-project/create-project.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-project/create-project.component.html</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-project/create-project.component.html</context>
+          <context context-type="linenumber">128</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b50025d989e31edda40c8fbd2554f352c15e0707" datatype="html">
+        <source> Comentario: </source>
+        <target> Commentary: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/donation/donation.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9e9f7a62fb37592bd11b4958ee98c34459ecfdd9" datatype="html">
+        <source>Debe contener al menos 5 caracteres</source>
+        <target>Must contain at least 5 characters</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/donation/donation.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c561facdc79eda263e85052ae5e5b5f9bf0eed56" datatype="html">
+        <source>
+          Atrás
+        </source>
+        <target>
+          Back
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/donation/donation.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="363c94a5e50bab35f71aa65e7d1f0b5a892f27dc" datatype="html">
+        <source>
+          Donar
+        </source>
+        <target>
+          Donate
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/donation/donation.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="412209b9cfe738093946bc2706ff80c1ae5cab02" datatype="html">
+        <source>Regístrate</source>
+        <target>Sign up</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/sign-up/sign-up.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f2be28d6c32e18f651f88abdb851fd2f78ed0793" datatype="html">
+        <source>Debe contener al menos 3 letras</source>
+        <target>Must contain at least 3 letters</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/sign-up/sign-up.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7f3382ee78943578f5dfd603388864d9f4ac5b9f" datatype="html">
+        <source>Debe contener al menos 4 caracteres</source>
+        <target>Must contain at least 4 letters</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/sign-up/sign-up.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2f11c894d5283337f389610b11da42f072dda962" datatype="html">
+        <source>Escriba un email valido, ejemplo: example@example.com</source>
+        <target>Enter a valid email, example: example@example.com</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/sign-up/sign-up.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="43688d6324f32f4b9f6867ff89340e3b84efc15c" datatype="html">
+        <source>Debe contener al menos 8 caracteres</source>
+        <target>Must contain at least 8 characters</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/sign-up/sign-up.component.html</context>
+          <context context-type="linenumber">119</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0c34371cc950c06bc243dc7e7e6fb2ce80ee8ef4" datatype="html">
+        <source>
+        Registrar
+        </source>
+        <target>
+        Sign up
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/sign-up/sign-up.component.html</context>
+          <context context-type="linenumber">154</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="66612eefae57e2f9bbe5910976a917ec4bceaec6" datatype="html">
+        <source>
+        ¿Ya tienes una cuenta? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Entre aquí<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.
+      </source>
+      <target>
+        Already have an account? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Login here<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.
+      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/sign-up/sign-up.component.html</context>
+          <context context-type="linenumber">164</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="68bab4cf9716ea7d0f696939f7a33a1c9ad13973" datatype="html">
+        <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Inicio<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <target><x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Home<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5c1f3ee51edec447eb49769afb8c2bd71e2bb08c" datatype="html">
+        <source>Perfil de usuario</source>
+        <target>User Profile</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="25909a580448cf412ebe694e43db98ebaaf78ffa" datatype="html">
+        <source> Adjuntar archivo </source>
+        <target> Attach file </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="70dac29197306c766bc0bc7a49953940021b500e" datatype="html">
+        <source>
+                Subir foto
+                </source>
+        <target>
+                Upload Photo
+                </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dd2a11ebc737589080ed400dacc33a8c8c84728b" datatype="html">
+        <source>Nombre</source>
+        <target>Name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8e6c661d78dab5d849d750e987c990219f00e1e2" datatype="html">
+        <source>Nombre de usuario</source>
+        <target>User Name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8b4bb9bd0228fff7fc4f4da2a0f8037763ae5bf7" datatype="html">
+        <source>Puntos</source>
+        <target>Points</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e089cfd102c309f4fa1369d9537467e5db8113d8" datatype="html">
+        <source>Rol</source>
+        <target>Role</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c1201b304e9973dc6485df4fa078d8093a9f7876" datatype="html">
+        <source>
+              <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/>assignment<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>Donaciones realizadas
+            </source>
+        <target>
+              <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/>assignment<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>Donations made
+            </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="561b28544237f54661e43161db94a7e6512828fc" datatype="html">
+        <source>
+      Actualmente existen muchísimos pueblos y localidades que aún no cuentan
+      con conectividad a Internet. El programa Argentina Conectada (luego
+      rebautizado como Plan Federal de Internet) se propone llevar conectividad
+      a todo el país, pueblo por pueblo.
+    </source>
+        <target>
+      Currently there are many towns and villages that still do not count
+      with internet connectivity. The Argentina Conectada program (later
+      renamed the Federal Internet Plan) intends to bring connectivity
+      to the whole country, town by town.
+    </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about-us/about-us.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5b98823e420810d78a1c5e41cfb1ab9cd79711da" datatype="html">
+        <source>
+      El Plan Argentina Conectada, a diferencia de otras políticas públicas del
+      sector, destinó la inversión estatal a la capa de infraestructura de
+      internet, un punto crítico por su alta concentración y eleva-dos costos de
+      capital, a través de la construcción de la Red Federal de Fibra Óptica
+      (REFEFO). La misma se planteó como una red troncal a cargo del Estado, que
+      permitiera llegar a todo el país con tecnología de última generación,
+      infraestructura multipropósito y capacidad de trasmitir información de
+      diverso tipo, no solo internet, para responder a demandas de alta
+      capacidad en el mediano y largo plazo. El diseño de este tendido no se
+      basó en una estructura heredada sino que respondió a los intereses
+      definidos por el propio Plan (diferente, por ejemplo, a la lógica de
+      mercado del antiguo tendido ferroviario nacional iniciado en 1880), y
+      apuntó a favorecer la interconexión entre prestadores, mayor competencia y
+      horizontalidad en la distribución y acceso a internet (Feider, Galanternik
+      y Meza Ingaramo, 2013).
+    </source>
+      <target>
+    The Plan Argentina Conectada, unlike other public policies of the
+    sector, allocated state investment to the infrastructure layer of
+    Internet, a critical point due to its high concentration and high costs of
+    capital, through the construction of the Federal Fiber Optic Network
+    (REFEFO). It was proposed as a backbone network run by the State, which
+    allowed to reach the whole country with the latest technology,
+    multipurpose infrastructure and the ability to transmit information from
+    diverse type, not only internet, to respond to demands of high
+    capacity in the medium and long term. The design of this laying is not
+    based on an inherited structure but responded to the interests
+    defined by the Plan itself (different, for example, from the logic of
+    market of the old national railway line started in 1880), and
+    aimed at favoring the interconnection between providers, greater competition and
+    horizontality in internet distribution and access (Feider, Galanternik
+    and Meza Ingaramo, 2013).
+   </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about-us/about-us.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project name" datatype="html">
+        <source>Nombre</source>
+        <target>Name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/table-project/table-project.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">project name</note>
+      </trans-unit>
+      <trans-unit id="place name" datatype="html">
+        <source>Localidad</source>
+        <target>Place</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/table-project/table-project.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">place name</note>
+      </trans-unit>
+      <trans-unit id="province" datatype="html">
+        <source>Provincia</source>
+        <target>Province</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/table-project/table-project.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">province name</note>
+      </trans-unit>
+      <trans-unit id="con status" datatype="html">
+        <source>
+              Conectividad
+            </source>
+        <target>
+              Connectivity
+            </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/table-project/table-project.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">conectivity status</note>
+      </trans-unit>
+      <trans-unit id="amount raised" datatype="html">
+        <source>
+              Total recaudado
+            </source>
+        <target>
+              Total raised
+            </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/table-project/table-project.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <note priority="1" from="description">amount raised</note>
+      </trans-unit>
+      <trans-unit id="pct left" datatype="html">
+        <source>% faltante</source>
+        <target>% missing</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/table-project/table-project.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="description">pct left</note>
+      </trans-unit>
+      <trans-unit id="project actions" datatype="html">
+        <source>
+              Donar
+            </source>
+        <target>
+              Donate
+            </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/table-project/table-project.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/table-project/table-project.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <note priority="1" from="description">project actions</note>
+      </trans-unit>
+      <trans-unit id="4fd8f2ea4726398280e0e25275d743af998d2bf0" datatype="html">
+        <source>Donar</source>
+        <target>Donate</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/table-project/table-project.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="71db2c16f93993986f34caab2fcf9df8df75e2be" datatype="html">
+        <source>Finalizar</source>
+        <target>Finalize</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/table-project/table-project.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f0110d0acbcb0af98f7686752722c1eaa7baad7a" datatype="html">
+        <source>
+            Nuevo Proyecto
+          </source>
+        <target>
+            New project
+          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/table-project/table-project.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="761088bbbb994573fe8ff8dfffd34647e0938bb2" datatype="html">
+        <source>Nombre del proyecto</source>
+        <target>Project name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/table-donation/table-donation.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b173ec5192470d6b2da768338bc24a965d7e001c" datatype="html">
+        <source>Fecha</source>
+        <target>Date</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/table-donation/table-donation.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="934bb8feff587661a12f740cb0d5d44219f2c510" datatype="html">
+        <source>Puntos</source>
+        <target>Points</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/table-donation/table-donation.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9209cc7685481b2041f00a8084819a6f54046385" datatype="html">
+        <source>Monto</source>
+        <target>Amount</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/table-donation/table-donation.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3407f69eb07822102a0ecdb71796e8ed125033ed" datatype="html">
+        <source>Crear proyecto</source>
+        <target>Create project</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-project/create-project.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2ccc71c54755873d40acb1b189862f618464feec" datatype="html">
+        <source>nombre del proyecto: </source>
+        <target>project name: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-project/create-project.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="32226d7f3de8a7cc165c7670e0b9d0e6dff06ad0" datatype="html">
+        <source>Debe contener al menos 8 letras</source>
+        <target>Must contain at least 8 letters</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-project/create-project.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="73972096763657120fac49a7911a3082ba071b29" datatype="html">
+        <source>Localidad a conectar: </source>
+        <target>Location to connect: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-project/create-project.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2262b8802ad1704e10360231f6974da0e1018b41" datatype="html">
+        <source>Localidad</source>
+        <target>Place</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-project/create-project.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a235424e99cc817862eb5506699837c6e265f126" datatype="html">
+        <source>Fecha de inicio: </source>
+        <target>Start date: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-project/create-project.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fe1c030f7b3df9c260664c383c3b0f075e4e637b" datatype="html">
+        <source>Fecha de fin: </source>
+        <target>End date: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-project/create-project.component.html</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0541485186f30c3675c2d4a2ce4615bb32bcc11b" datatype="html">
+        <source>Opcional</source>
+        <target>Optional</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-project/create-project.component.html</context>
+          <context context-type="linenumber">149</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="542d6085c948537dec52cfe40ac9c237c38c4e7e" datatype="html">
+        <source>Factor: </source>
+        <target>Factor: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-project/create-project.component.html</context>
+          <context context-type="linenumber">160</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c0f2d938946fa9a6b9287df4482637208982040e" datatype="html">
+        <source>El factor máximo son $100.000</source>
+        <target>The maximum factor is $ 100,000</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-project/create-project.component.html</context>
+          <context context-type="linenumber">182</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2566aa21a0941fa7c376dcbaca44b6ab3c5288cc" datatype="html">
+        <source>
+        Atrás
+      </source>
+      <target>
+      Back
+    </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-project/create-project.component.html</context>
+          <context context-type="linenumber">191</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8481319d7d0ad5318159139fb923efcf9e00b60d" datatype="html">
+        <source>
+        Crear
+      </source>
+        <target>
+        Create
+      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/create-project/create-project.component.html</context>
+          <context context-type="linenumber">194</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

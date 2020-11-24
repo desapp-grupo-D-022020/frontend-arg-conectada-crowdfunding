@@ -42,7 +42,7 @@ export class ProfileComponent implements OnInit {
     this.getDonations(this.pageDonationNumber);
     this.getUser();
     this.role = this.tokenService.getRoleUser();
-    this.info_file = "no attachment";
+    this.info_file = "sin adjunto";
     this.haveFile = false;
 
     this.form = this.fb.group({
@@ -72,7 +72,7 @@ export class ProfileComponent implements OnInit {
       this.haveFile = true;
     }
     else{ 
-      this.info_file = "no attachment";
+      this.info_file = "sin adjunto";
       this.haveFile = false;
     }
   }
@@ -105,7 +105,7 @@ export class ProfileComponent implements OnInit {
 
   formReset(){
     this.form.reset();
-    this.info_file = "no attachment";
+    this.info_file = "sin adjunto";
     this.haveFile = false;
   }
 
@@ -115,8 +115,8 @@ export class ProfileComponent implements OnInit {
     formData.append('userId', `${this.tokenService.getUserId()}`);
     this.userService.changeUserPicture(formData)
     .subscribe(
-      response => { this.alert('Image changed successfully!', 'success', 2800), console.log('Success!', response) }, 
-      error => { this.alert('Failed to change profile picture! Excuse me, please try again later', 'error', 3500), console.log('Error!', error) },
+      response => { this.alert('¡Imagen cambiada con éxito!', 'success', 2800), console.log('Success!', response) }, 
+      error => { this.alert('¡No se pudo cambiar la foto de perfil! Disculpe, vuelva a intentarlo más tarde.', 'error', 3500), console.log('Error!', error) },
     );
     this.formReset();
     setTimeout(()=>{ location.reload(); }, 3500)

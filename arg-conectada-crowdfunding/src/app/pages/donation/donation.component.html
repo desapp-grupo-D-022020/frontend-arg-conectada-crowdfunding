@@ -3,7 +3,7 @@
     <h2>{{ project.name }}</h2>
     <form [formGroup]="donationForm" (ngSubmit)="onSubmit()" class="row">
       <div class="col-md-12">
-        <label> Monto: </label>
+        <label i18n > Monto: </label>
         <div class="form-group">
           <input
             [class.is-invalid]="
@@ -17,13 +17,14 @@
           />
           <div *ngIf="getField('amount').invalid && getField('amount').touched">
             <small
+              i18n
               *ngIf="getField('amount').errors?.required"
               class="text-danger"
               >Campo obligatorio</small
             >
           </div>
         </div>
-        <label> Comentario: </label>
+        <label i18n > Comentario: </label>
         <div class="form-group">
           <textarea
             [class.is-invalid]="
@@ -38,11 +39,13 @@
             *ngIf="getField('comment').invalid && getField('comment').touched"
           >
             <small
+              i18n
               *ngIf="getField('comment').errors?.required"
               class="text-danger"
               >Campo obligatorio</small
             >
             <small
+              i18n
               *ngIf="getField('comment').errors?.minlength"
               class="text-danger"
               >Debe contener al menos 5 caracteres</small
@@ -50,6 +53,7 @@
           </div>
         </div>
         <button
+          i18n
           class="btn btn-primary left-width"
           type="button"
           (click)="goBack()"
@@ -57,6 +61,7 @@
           Atrás
         </button>
         <button
+          i18n
           [disabled]="!donationForm.valid"
           class="btn btn-primary right-width"
           type="submit"

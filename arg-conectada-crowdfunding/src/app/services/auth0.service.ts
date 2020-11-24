@@ -10,6 +10,7 @@ import * as auth0 from 'auth0-js';
 export class OAuthService {
 
   auth0: WebAuth;
+  userProfile: any;
 
   constructor(private router: Router) {
     this.auth0 = new auth0.WebAuth({
@@ -18,7 +19,7 @@ export class OAuthService {
       responseType: 'token id_token',
       audience: 'https://dev-kzju2daw.auth0.com/api/v2/',
       redirectUri: `${window.location.origin}`,
-      scope: 'openid'
+      scope: 'openid profile'
     });
     this.handleAuthentication();
   }
@@ -45,7 +46,7 @@ export class OAuthService {
     });
   }
 
-  public logout(): void {
+  public logOut(): void {
     localStorage.removeItem('accessToken');
     localStorage.removeItem('idToken');
     localStorage.removeItem('expiresAt');
@@ -67,6 +68,7 @@ export class OAuthService {
         window.location.hash = '';
         this.setSession(authResult);
         this.router.navigate(['/']);
+        location.reload()
       } else if (err) {
         this.router.navigate(['/']);
         console.log(err);
@@ -80,14 +82,14 @@ export class OAuthService {
         this.setSession(authResult);
       } else if (err) {
         alert(`Could not get a new token (${err.error}: ${err.error_description}).`);
-        this.logout();
+        this.logOut();
       }
     });
   }
 
   getProfile(cb) {
     if (window.location.hash) {
-        this.auth0.parseHash({ hash: window.location.hash }, (err, authResult) => {
+      this.auth0.parseHash({ hash: window.location.hash }, (err, authResult) => {
         if (err) {
           return console.log('parseHash error', err)
         }
@@ -98,7 +100,6 @@ export class OAuthService {
             }
             localStorage.setItem('profile', JSON.stringify(user))
             localStorage.setItem('id_token', authResult.idToken)
-            location.href = '/state';
           })
         }
       })
@@ -113,12 +114,7 @@ export class OAuthService {
       localStorage.setItem('accessToken', authResult.accessToken);
       localStorage.setItem('idToken', authResult.idToken);
       localStorage.setItem('expiresAt', expiresAt);
-      this.getProfile((err, profile) => {
-        if (err) {
-          throw new Error(err);
-        }
-        this.router.navigate(['/']);
-      });
+      this.getProfile(authResult.accessToken);
     }
   }
 

@@ -42,9 +42,12 @@
           },
           "configurations": {
             "en-US": {
-              "localize": [
-                "en-US"
-              ]
+              "aot": true,
+              "outputPath": "dist/under-construction-en-US/",
+              "i18nFile": "src/locales/en-US.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "en",
+              "i18nMissingTranslation": "error"
             },
             "production": {
               "fileReplacements": [
@@ -136,6 +139,9 @@
           "configurations": {
             "production": {
               "devServerTarget": "arg-conectada-crowdfunding:serve:production"
+            },
+            "en-US": {
+              "devServerTarget": "arg-conectada-crowdfunding:serve:en-US"
             }
           }
         }

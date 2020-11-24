@@ -44,20 +44,21 @@
             <td>{{ p.pct_left_to_reach_goal }}%</td>
             <td *ngIf="role === 'User' || (role === 'Admin' && isLogin)">
               <a
+                i18n
                 routerLink="/donation/{{ p.id }}"
                 class="btn btn-outline-primary"
                 >Donar</a
               >
             </td>
             <td class="btn-center" *ngIf="role === 'Admin' && isLogin">
-              <a (click)="closeProject(p.id)" class="btn btn-outline-danger"
+              <a i18n (click)="closeProject(p.id)" class="btn btn-outline-danger"
                 >Finalizar</a
               >
             </td>
           </tr>
         </tbody>
         <div *ngIf="role === 'Admin' && isLogin">
-          <button class="btn btn-outline-primary" routerLink="/createProject">
+          <button i18n class="btn btn-outline-primary" routerLink="/createProject">
             Nuevo Proyecto
           </button>
         </div>

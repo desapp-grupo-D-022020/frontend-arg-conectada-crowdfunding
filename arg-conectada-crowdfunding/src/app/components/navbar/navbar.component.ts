@@ -25,8 +25,15 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     if (this.tokenService.getToken()) {
       this.getUser();
-      this.isLogin = true;;
+      this.isLogin = true;
     }
+    if(this.auth.isAuthenticated()){
+      this.isLogin = true;
+    }
+  }
+
+  ngOnChange(){
+
   }
   
   logOut(): void {

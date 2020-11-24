@@ -2,7 +2,7 @@
   <div class="signup-form">
     <form [formGroup]="form" (ngSubmit)="onRegister()" novalidate>
       <div class="form-header">
-        <h2>Sign Up</h2>
+        <h2 i18n>Regístrate</h2>
       </div>
       <div class="form-group">
         <div class="input-group">
@@ -12,6 +12,7 @@
             </span>
           </div>
           <input
+            i18n
             [class.is-invalid]="
               getField('name').invalid && getField('name').touched
             "
@@ -26,10 +27,10 @@
           />
         </div>
         <div *ngIf="getField('name').invalid && getField('name').touched">
-          <small *ngIf="getField('name').errors?.minlength" class="text-danger"
+          <small i18n *ngIf="getField('name').errors?.minlength" class="text-danger"
             >Debe contener al menos 3 letras</small
           >
-          <small *ngIf="getField('name').errors?.required" class="text-danger"
+          <small i18n *ngIf="getField('name').errors?.required" class="text-danger"
             >Campo obligatorio</small
           >
         </div>
@@ -42,6 +43,7 @@
             </span>
           </div>
           <input
+            i18n
             class="form-control"
             name="userName"
             type="text"
@@ -55,11 +57,13 @@
           *ngIf="getField('userName').invalid && getField('userName').touched"
         >
           <small
+            i18n
             *ngIf="getField('userName').errors?.minlength"
             class="text-danger"
             >Debe contener al menos 4 caracteres</small
           >
           <small
+            i18n
             *ngIf="getField('userName').errors?.required"
             class="text-danger"
             >Campo obligatorio</small
@@ -83,10 +87,10 @@
           />
         </div>
         <div *ngIf="getField('email').invalid && getField('email').touched">
-          <small *ngIf="getField('email').errors?.required" class="text-danger"
+          <small i18n *ngIf="getField('email').errors?.required" class="text-danger"
             >Campo obligatorio</small
           >
-          <small *ngIf="getField('email').errors?.pattern" class="text-danger"
+          <small i18n *ngIf="getField('email').errors?.pattern" class="text-danger"
             >Escriba un email valido, ejemplo: example@example.com</small
           >
         </div>
@@ -97,6 +101,7 @@
             <span class="input-group-text"><i class="fa fa-lock"></i></span>
           </div>
           <input
+            i18n
             class="form-control"
             type="password"
             name="password"
@@ -107,10 +112,10 @@
           />
         </div>
         <div *ngIf="getField('password').invalid && getField('password').touched">
-          <small *ngIf="getField('password').errors?.required" class="text-danger"
+          <small i18n *ngIf="getField('password').errors?.required" class="text-danger"
             >Campo obligatorio</small
           >
-          <small *ngIf="getField('password').errors?.minlength" class="text-danger"
+          <small i18n *ngIf="getField('password').errors?.minlength" class="text-danger"
             >Debe contener al menos 8 caracteres</small
           >
         </div>
@@ -124,6 +129,7 @@
             </span>
           </div>
           <input
+            i18n
             type="password"
             class="form-control"
             name="confirm_password"
@@ -134,18 +140,19 @@
           />
         </div>
         <div *ngIf="getField('confirmPassword').invalid && getField('confirmPassword').touched">
-          <small *ngIf="getField('confirmPassword').errors?.required" class="text-danger"
+          <small i18n *ngIf="getField('confirmPassword').errors?.required" class="text-danger"
             >Campo obligatorio</small
           >
         </div>
       </div>
       <div class="form-group">
         <button
+          i18n
           type="submit"
           class="btn btn-primary btn-block btn-lg"
           [disabled]="!form.valid"
         >
-          Sign Up
+        Registrar
         </button>
         <div
           *ngIf="isRegisterFail"
@@ -154,8 +161,8 @@
           Fail when creating account: {{ errorMsg }}
         </div>
       </div>
-      <div class="text-center">
-        Already have an account? <a routerLink="/login">Login here</a>.
+      <div i18n class="text-center">
+        ¿Ya tienes una cuenta? <a routerLink="/login">Entre aquí</a>.
       </div>
     </form>
   </div>

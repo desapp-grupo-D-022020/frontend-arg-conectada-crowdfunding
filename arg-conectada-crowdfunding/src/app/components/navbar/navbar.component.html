@@ -7,13 +7,12 @@
 	</button>
 	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
 		<div class="navbar-nav ml-auto">
-			<a href="#" class="nav-item nav-link active" (click)="collapse()" i18n="home@@home">Home</a>
-			<a class="nav-item nav-link" (click)="collapse()" href="#about-us">About us</a>
-			<a href="#projects" class="nav-item nav-link" (click)="collapse()" i18n="projects@@projects">Projects</a>
-			<!-- <a class="nav-item nav-link" (click)="collapse()" routerLink="login" *ngIf="!isLogin">Login</a> -->
-			<a class="nav-item nav-link" (click)="auth.loginGoogle()" *ngIf="!auth.isAuthenticated()">Login</a>
-			<a class="nav-item nav-link" (click)="auth.logout()" *ngIf="auth.isAuthenticated()">Logout</a>
-   			<div class="nav-item dropdown" *ngIf="auth.isAuthenticated() && $user | async as user">
+			<a i18n href="#" class="nav-item nav-link active" (click)="collapse()" i18n="home@@home">Inicio</a>
+			<a i18n class="nav-item nav-link" (click)="collapse()" href="#about-us">Acerca de nosotros</a>
+			<a i18n href="#projects" class="nav-item nav-link" (click)="collapse()" i18n="projects@@projects">Proyectos</a>
+			<a i18n class="nav-item nav-link" (click)="collapse()" routerLink="login" *ngIf="!isLogin">Iniciar sesión</a>
+			<a i18n class="nav-item nav-link" (click)="auth.logOut()" *ngIf="auth.isAuthenticated()">Cerrar sesión</a>
+   			<div class="nav-item dropdown" *ngIf="isLogin && $user | async as user">
 				<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action">
 				<img *ngIf="user.img; else withImg" src="data:image/gif;base64,{{ user.img }}" class="rounded-circle" width="150" alt="member:{{ user.name }}"/>
 				<ng-template #withImg>
@@ -21,11 +20,9 @@
 				</ng-template>
             	{{ user.userName }} <b class="caret"></b></a>
 				<div class="dropdown-menu">
-					<a routerLink="profile" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
-					<!-- <a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a>
-					<a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a> -->
+					<a i18n routerLink="profile" class="dropdown-item"><i class="fa fa-user-o"></i> Perfil</a>
 					<div class="dropdown-divider divider"></div>
-					<a href="#" class="dropdown-item" (click)="logOut()"><i class="material-icons">&#xE8AC;</i> Logout</a>
+					<a i18n href="#" class="dropdown-item" (click)="logOut()"><i class="material-icons">&#xE8AC;</i> Cerrar sesión</a>
 				</div>
 			</div>
 		</div>

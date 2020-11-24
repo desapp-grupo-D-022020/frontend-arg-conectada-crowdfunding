@@ -2,10 +2,10 @@
   <div class="create-form">
     <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
       <div class="form-header">
-        <h2>Create Project</h2>
+        <h2 i18n >Crear proyecto</h2>
       </div>
       <div class="form-group">
-        <label>Name of project: </label>
+        <label i18n >nombre del proyecto: </label>
         <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text">
@@ -13,11 +13,12 @@
             </span>
           </div>
           <input
+            i18n
             [class.is-invalid]="
               getField('name').invalid && getField('name').touched
             "
             class="form-control"
-            placeholder="Name"
+            placeholder="Nombre"
             name="name"
             type="text"
             (keypress)="onlyletters($event)"
@@ -27,16 +28,16 @@
           />
         </div>
         <div *ngIf="getField('name').invalid && getField('name').touched">
-          <small *ngIf="getField('name').errors?.minlength" class="text-danger"
+          <small i18n *ngIf="getField('name').errors?.minlength" class="text-danger"
             >Debe contener al menos 8 letras</small
           >
-          <small *ngIf="getField('name').errors?.required" class="text-danger"
+          <small i18n *ngIf="getField('name').errors?.required" class="text-danger"
             >Campo obligatorio</small
           >
         </div>
       </div>
       <div class="form-group">
-        <label>Place of project: </label>
+        <label i18n >Localidad a conectar: </label>
         <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text">
@@ -52,7 +53,7 @@
             formControlName="placeId"
             required="required"
           >
-            <option value="" disabled selected>Place</option>
+            <option i18n value="" disabled selected>Localidad</option>
             <option [value]="place.id" *ngFor="let place of places">
               {{ place.name }}
             </option>
@@ -60,6 +61,7 @@
         </div>
         <div *ngIf="getField('placeId').invalid && getField('placeId').touched">
           <small
+            i18n
             *ngIf="getField('placeId').errors?.required"
             class="text-danger"
             >Campo obligatorio</small
@@ -68,7 +70,7 @@
       </div>
 
       <div class="form-group">
-        <label>Start date: </label>
+        <label i18n >Fecha de inicio: </label>
         <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text">
@@ -91,6 +93,7 @@
           *ngIf="getField('startDate').invalid && getField('startDate').touched"
         >
           <small
+            i18n
             *ngIf="getField('startDate').errors?.required"
             class="text-danger"
             >Campo obligatorio</small
@@ -98,7 +101,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label>End date: </label>
+        <label i18n >Fecha de fin: </label>
         <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text">
@@ -119,6 +122,7 @@
         </div>
         <div *ngIf="getField('endDate').invalid && getField('endDate').touched">
           <small
+            i18n
             *ngIf="getField('endDate').errors?.required"
             class="text-danger"
             >Campo obligatorio</small
@@ -126,7 +130,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label>Percentage for close: </label>
+        <label>Porcentaje de cierre: </label>
         <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text">
@@ -142,7 +146,7 @@
             name="percentageForClose"
             formControlName="percentageForClose"
           >
-            <option value="" disabled selected>Optional</option>
+            <option i18n value="" disabled selected>Opcional</option>
             <option
               [value]="percentageForClose"
               *ngFor="let percentageForClose of rangePercentageForClose"
@@ -153,7 +157,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label>Factor: </label>
+        <label i18n >Factor: </label>
         <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text">
@@ -174,20 +178,21 @@
           />
         </div>
         <div *ngIf="getField('factor').invalid && getField('factor').touched">
-          <small *ngIf="getField('factor').errors?.max" class="text-danger"
+          <small i18n *ngIf="getField('factor').errors?.max" class="text-danger"
             >El factor máximo son $100.000</small
           >
         </div>
       </div>
       <button
+        i18n
         class="btn btn-primary left-width"
         type="button"
         (click)="goBack()"
       >
         Atrás
       </button>
-      <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
-        Create
+      <button i18n type="submit" class="btn btn-primary" [disabled]="!form.valid">
+        Crear
       </button>
     </form>
   </div>
