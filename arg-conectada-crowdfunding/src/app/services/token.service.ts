@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 const TOKEN_KEY = 'AuthToken';
 const USERNAME_KEY = 'AuthUserName';
+const USERID_KEY = 'AuthUserId';
 const AUTHORITIES_KEY = 'AutAuthorities';
 
 @Injectable({
@@ -9,7 +10,8 @@ const AUTHORITIES_KEY = 'AutAuthorities';
 })
 export class TokenService {
 
-  roles: Array<string> = [];
+  private roles: Array<string> = [];
+  private role: string;
 
   constructor() { }
 
@@ -31,6 +33,15 @@ export class TokenService {
     return sessionStorage.getItem(USERNAME_KEY);
   }
 
+  public setUserId(userId: number): void {
+    window.sessionStorage.removeItem(USERID_KEY);
+    window.sessionStorage.setItem(USERID_KEY, JSON.stringify(userId));
+  }
+
+  public getUserId(): number {
+    return JSON.parse(sessionStorage.getItem(USERID_KEY));
+  }
+
   public setAuthorities(authorities: string[]): void {
     window.sessionStorage.removeItem(AUTHORITIES_KEY);
     window.sessionStorage.setItem(AUTHORITIES_KEY, JSON.stringify(authorities));
@@ -44,6 +55,15 @@ export class TokenService {
       });
     }
     return this.roles;
+  }
+
+  public getRoleUser(): string {
+    if (this.getAuthorities().includes('ROLE_ADMIN')) {
+      this.role = 'Admin';
+    }else{
+      this.role = 'User';
+    }
+    return this.role;
   }
 
   public logOut(): void {

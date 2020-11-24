@@ -1,0 +1,122 @@
+.form-header {
+	margin: -30px -30px 30px;
+	padding: 30px 30px 10px;
+	text-align: center;
+	background: var(--lightblue);
+	border-bottom: 1px solid var(--white);
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+	color: var(--white);
+}
+
+.form-header h2 {
+	font-size: 34px;
+	font-weight: bold;
+	margin: 0 0 10px;
+	font-family: 'Pacifico', sans-serif !important;
+}
+
+.create-form {
+    font-size: 15px;    
+    border: 1.5px solid var(--black);
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px var(--black);
+}
+
+.create-form form {
+	color: var(--black);
+	border-radius: 2px;
+	width: 100%;
+	font-size: 13px;
+	background: var(--white);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+	padding: 30px;	
+	position: relative;	
+}
+
+.form-header {
+	margin: -30px -30px 30px;
+	padding: 30px 30px 10px;
+	text-align: center;
+	background: var(--lightblue);
+	border-bottom: 1px solid var(--white);
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+	color: var(--white);
+}
+
+.form-header h2 {
+	font-size: 34px;
+	font-weight: bold;
+	margin: 0 0 10px;
+	font-family: 'Pacifico', sans-serif !important;
+}
+
+.create-form .lead {
+	font-size: 14px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.create-form .form-group {
+	margin-bottom: 20px;
+}
+
+.create-form .btn {
+	margin-top: 12%;
+}
+
+.create-form .btn, .create-form .btn:active {        
+	font-size: 16px;
+    font-weight: bold;
+    background-color: var(--lightblue);
+    color: var(--white);
+	border-radius: 3px;
+	border: none;
+    min-width: 140px;
+}
+
+.create-form .btn:hover:enabled, .create-form .btn:focus {
+    background-color: var(--lightblue-hover); 
+}
+
+.btn-primary {
+    background-color: var(--lightblue);
+    color: var(--white);
+    border: 1px solid var(--black);
+}
+
+.btn-primary:hover:enabled { 
+    background-color: var(--lightblue-hover); 
+    border: 1px solid var(--black); 
+}
+
+.left-width {
+    margin-right: 10px;
+}
+
+span .fa-percent {
+    font-size: 14px;
+}
+
+label {
+	font-size: 16px;
+	font-family: cursive;
+}
+
+button {
+    margin-top: 16px !important;
+}
+
+select:required:invalid {
+	color: var(--gray);
+}
+
+option[value=""][disabled] {
+	display: none;
+}
+
+option {
+	color: var(--black);
+}

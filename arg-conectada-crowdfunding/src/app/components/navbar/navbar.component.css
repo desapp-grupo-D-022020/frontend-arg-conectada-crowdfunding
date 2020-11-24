@@ -1,30 +1,107 @@
-.navbar{
-    background-color: var(--lightblue);
+img {
+	color: var(--white) !important;
+}
+
+.form-inline {
+	display: inline-block;
+}
+
+.navbar-header.col {
+	padding: 0 !important;
+}
+
+.navbar {		
+	background: var(--lightblue) !important;
+	padding-left: 16px;
+	padding-right: 16px;
     box-shadow: 0 2px 4px 0 var(--black);
     min-height: 75px;
 }
 
 .nav-link{
-    color: var(--white);
+	color: var(--white) !important;
 }
 
-.navbar-brand{
-    color: var(--white);
+button {
+	outline:none;
+}
+
+button span {
+	color: var(--white) !important;
+}
+
+button span:hover {
+	color: var(--white) !important;
 }
 
 .nav-link:hover{
-    color: var(--white);
-    background: var(--lightblue-hover);
+    color: var(--black) !important;
 }
 
-.navbar-toggler{
-    font-size: 40px;
+.nav-link img {
+	border-radius: 50%;
+	width: 36px;
+	height: 36px;
+	margin: -8px 0;
+	float: left;
+	margin-right: 10px;
 }
 
-.navbar-toggler:focus{
-    outline: none;
+.navbar .navbar-brand {
+	color: var(--white) !important;
+	padding-left: 0;
+	padding-right: 50px;
+	font-family: 'Merienda One', sans-serif;
+}
+.navbar .navbar-brand i {
+	font-size: 20px;
+	margin-right: 5px;
 }
 
-.center {
-    margin: 0 2% 0 2%;
+.navbar .nav-item i {
+	font-size: 18px;
+}
+
+.navbar .dropdown-item i {
+	font-size: 16px;
+	min-width: 22px;
+}
+
+.navbar .dropdown-menu {
+	border-radius: 1px;
+	border-color: var(--black) !important;
+	box-shadow: 0 2px 8px var(--black);
+}
+
+.navbar .dropdown-menu a {
+	color: var(--gray) !important;
+	padding: 8px 20px;
+	line-height: normal;
+}
+
+.navbar .dropdown-menu a:hover, .navbar .dropdown-menu a:active {
+	color: var(--black) !important;
+}	
+
+.navbar .dropdown-item .material-icons {
+	font-size: 21px;
+	line-height: 16px;
+	vertical-align: middle;
+	margin-top: -2px;
+}
+
+@media (min-width: 1200px){
+	.form-inline .input-group {
+		width: 300px;
+		margin-left: 30px;
+	}
+}
+@media (max-width: 1199px){
+	.form-inline {
+		display: block;
+		margin-bottom: 10px;
+	}
+	.input-group {
+		width: 100%;
+	}
 }

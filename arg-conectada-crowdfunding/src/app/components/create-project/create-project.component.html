@@ -1,0 +1,194 @@
+<div class="center-form">
+  <div class="create-form">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+      <div class="form-header">
+        <h2>Create Project</h2>
+      </div>
+      <div class="form-group">
+        <label>Name of project: </label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-tags" aria-hidden="true"></i>
+            </span>
+          </div>
+          <input
+            [class.is-invalid]="
+              getField('name').invalid && getField('name').touched
+            "
+            class="form-control"
+            placeholder="Name"
+            name="name"
+            type="text"
+            (keypress)="onlyletters($event)"
+            formControlName="name"
+            maxLength="34"
+            required="required"
+          />
+        </div>
+        <div *ngIf="getField('name').invalid && getField('name').touched">
+          <small *ngIf="getField('name').errors?.minlength" class="text-danger"
+            >Debe contener al menos 8 letras</small
+          >
+          <small *ngIf="getField('name').errors?.required" class="text-danger"
+            >Campo obligatorio</small
+          >
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Place of project: </label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-location-arrow" aria-hidden="true"></i>
+            </span>
+          </div>
+          <select
+            [class.is-invalid]="
+              getField('placeId').invalid && getField('placeId').touched
+            "
+            class="form-control custom-select"
+            name="placeId"
+            formControlName="placeId"
+            required="required"
+          >
+            <option value="" disabled selected>Place</option>
+            <option [value]="place.id" *ngFor="let place of places">
+              {{ place.name }}
+            </option>
+          </select>
+        </div>
+        <div *ngIf="getField('placeId').invalid && getField('placeId').touched">
+          <small
+            *ngIf="getField('placeId').errors?.required"
+            class="text-danger"
+            >Campo obligatorio</small
+          >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Start date: </label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+            </span>
+          </div>
+          <input
+            [class.is-invalid]="
+              getField('startDate').invalid && getField('startDate').touched
+            "
+            type="date"
+            id="startDate"
+            class="form-control"
+            name="startDate"
+            formControlName="startDate"
+            required="required"
+          />
+        </div>
+        <div
+          *ngIf="getField('startDate').invalid && getField('startDate').touched"
+        >
+          <small
+            *ngIf="getField('startDate').errors?.required"
+            class="text-danger"
+            >Campo obligatorio</small
+          >
+        </div>
+      </div>
+      <div class="form-group">
+        <label>End date: </label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-calendar-times-o" aria-hidden="true"></i>
+            </span>
+          </div>
+          <input
+            [class.is-invalid]="
+              getField('endDate').invalid && getField('endDate').touched
+            "
+            type="date"
+            id="endDate"
+            class="form-control"
+            name="endDate"
+            formControlName="endDate"
+            required="required"
+          />
+        </div>
+        <div *ngIf="getField('endDate').invalid && getField('endDate').touched">
+          <small
+            *ngIf="getField('endDate').errors?.required"
+            class="text-danger"
+            >Campo obligatorio</small
+          >
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Percentage for close: </label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-percent" aria-hidden="true"></i>
+            </span>
+          </div>
+          <select
+            [class.is-invalid]="
+              getField('percentageForClose').invalid && getField('percentageForClose').touched
+            "
+            class="form-control custom-select"
+            data-size="5"
+            name="percentageForClose"
+            formControlName="percentageForClose"
+          >
+            <option value="" disabled selected>Optional</option>
+            <option
+              [value]="percentageForClose"
+              *ngFor="let percentageForClose of rangePercentageForClose"
+            >
+              {{ percentageForClose }}%
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Factor: </label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-money" aria-hidden="true"></i>
+            </span>
+          </div>
+          <input
+            [class.is-invalid]="
+              getField('factor').invalid && getField('factor').touched
+            "
+            (keypress)="onlynumber($event)"
+            formControlName="factor"
+            placeholder="Optional"
+            class="form-control"
+            name="factor"
+            type="text"
+            maxlength="6"
+          />
+        </div>
+        <div *ngIf="getField('factor').invalid && getField('factor').touched">
+          <small *ngIf="getField('factor').errors?.max" class="text-danger"
+            >El factor máximo son $100.000</small
+          >
+        </div>
+      </div>
+      <button
+        class="btn btn-primary left-width"
+        type="button"
+        (click)="goBack()"
+      >
+        Atrás
+      </button>
+      <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+        Create
+      </button>
+    </form>
+  </div>
+</div>

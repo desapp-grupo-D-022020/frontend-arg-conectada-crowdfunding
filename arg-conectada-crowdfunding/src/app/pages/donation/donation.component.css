@@ -1,0 +1,41 @@
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.left-width {
+    margin: auto 0.5% auto 0%;
+    width: 49.5%;
+}
+
+.right-width {
+    margin: auto 0% auto 0.5%;
+    width: 49.5%;
+}
+
+.box {
+    background: var(--white);
+    color: #333;
+    border: 1px solid #333;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px var(--black);
+    box-sizing: border-box;
+    margin-top: 10px !important
+}
+
+.comentarios-container { 
+    max-height: 200px; 
+    min-height: 100px;
+}
+
+.btn-primary {
+    background-color: var(--lightblue);
+    color: var(--white);
+    border: 1px solid var(--black);
+}
+
+.btn-primary:hover:enabled { 
+    background-color: var(--lightblue-hover); 
+    border: 1px solid var(--black); 
+}

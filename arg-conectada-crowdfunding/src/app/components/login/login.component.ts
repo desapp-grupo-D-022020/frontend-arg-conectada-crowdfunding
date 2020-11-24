@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { UserLogin } from '../../models/user-login';
 import { AuthService } from '../../services/auth.service';
 import { TokenService } from '../../services/token.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +19,11 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
   errorMsg = '';
 
-  constructor(private authService: AuthService, private tokenService: TokenService, private router: Router) { }
+  submitted: Boolean = false;
+  error: {code: number, message: string} = null;
+
+  constructor(private authService: AuthService, private tokenService: TokenService
+              , private location:Location) { }
 
   ngOnInit() {
     if (this.tokenService.getToken()) {
@@ -31,23 +35,29 @@ export class LoginComponent implements OnInit {
 
   onLogin(): void {
     this.user = new UserLogin(this.form.userName, this.form.password);
-
     this.authService.login(this.user).subscribe(data => {
       this.tokenService.setToken(data.token);
       this.tokenService.setUserName(data.userName);
+      this.tokenService.setUserId(data.userId);
       this.tokenService.setAuthorities(data.authorities);
-
+  
       this.isLogged = true;
       this.isLoginFail = false;
       this.roles = this.tokenService.getAuthorities();
-      window.location.reload();
+  
+      this.goBack();
     },
-      (err: any) => {
+      (error: any) => {
+        console.log(error.error.message);
+        this.errorMsg = error.error.message;
         this.isLogged = false;
         this.isLoginFail = true;
-        this.errorMsg = err.error.message;
       }
     );
+   }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

@@ -1,13 +1,13 @@
 #notFound {
-    background-image: url('../../../assets/img/estrellas.gif');
+    background-image: url('../../../assets/img/404.gif');
     background-size: cover;
-    padding-top: 90px;
-    min-height: 982px;
+    
+    height: 100% !important;
+    width: 100% !important;
   }
   h1 {
     font-size: 60px;
     color: var(--white);
+    margin: 280px;
     text-align: center;
-    /* margin-top: 280px; */
-    margin: 380px;
   }

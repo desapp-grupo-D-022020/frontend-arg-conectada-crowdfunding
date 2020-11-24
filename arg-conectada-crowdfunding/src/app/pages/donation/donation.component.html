@@ -1,17 +1,69 @@
-<div *ngIf="project">
+<div class="center-form">
+  <div class="box" *ngIf="project">
     <h2>{{ project.name }}</h2>
-    <div>
-        <label>
-        Monto:
-        <input type="text" [formControl]="amount">
-        </label>
-
-        <label>
-            Comentario:
-            <input type="text" [formControl]="comment">
-        </label>
-    </div>
-
-    <button (click)="goBack()">Atrás</button>
-    <button (click)="donate()">Donar</button>
+    <form [formGroup]="donationForm" (ngSubmit)="onSubmit()" class="row">
+      <div class="col-md-12">
+        <label> Monto: </label>
+        <div class="form-group">
+          <input
+            [class.is-invalid]="
+              getField('amount').invalid && getField('amount').touched
+            "
+            (keypress)="onlynumber($event)"
+            formControlName="amount"
+            type="text"
+            class="form-control"
+            maxlength="15"
+          />
+          <div *ngIf="getField('amount').invalid && getField('amount').touched">
+            <small
+              *ngIf="getField('amount').errors?.required"
+              class="text-danger"
+              >Campo obligatorio</small
+            >
+          </div>
+        </div>
+        <label> Comentario: </label>
+        <div class="form-group">
+          <textarea
+            [class.is-invalid]="
+              getField('comment').invalid && getField('comment').touched
+            "
+            formControlName="comment"
+            required=""
+            class="form-control comentarios-container"
+            maxlength="1000"
+          ></textarea>
+          <div
+            *ngIf="getField('comment').invalid && getField('comment').touched"
+          >
+            <small
+              *ngIf="getField('comment').errors?.required"
+              class="text-danger"
+              >Campo obligatorio</small
+            >
+            <small
+              *ngIf="getField('comment').errors?.minlength"
+              class="text-danger"
+              >Debe contener al menos 5 caracteres</small
+            >
+          </div>
+        </div>
+        <button
+          class="btn btn-primary left-width"
+          type="button"
+          (click)="goBack()"
+        >
+          Atrás
+        </button>
+        <button
+          [disabled]="!donationForm.valid"
+          class="btn btn-primary right-width"
+          type="submit"
+        >
+          Donar
+        </button>
+      </div>
+    </form>
+  </div>
 </div>

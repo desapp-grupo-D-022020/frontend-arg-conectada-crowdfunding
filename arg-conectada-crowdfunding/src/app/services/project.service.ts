@@ -1,34 +1,56 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { catchError, tap } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
-import { Project } from './project';
+import { Project } from '../models/project';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
 
-  private projectsUrl = 'api/projects';  // URL to web api
+  private projectsUrl = `${environment.urlApi}/projects`;  // URL to web api
 
   constructor(private http: HttpClient) { }
 
   /** GET projects from the server */
-  getProjects(): Observable<Project[]> {
-    return this.http.get<Project[]>(this.projectsUrl)
-    .pipe(
-      tap(_ => this.log('fetched projects')),
-      catchError(this.handleError<Project[]>('getProjects', []))
-    );
+  getOpenProjects(page: number): Observable<any> {
+    return this.http.get<any>(`${this.projectsUrl}/getOpenProjects?` + `page=${page}`)
+  }
+
+  getNearlyClosedProjects(page: number): Observable<any> {
+    return this.http.get<any>(`${this.projectsUrl}/getNearlyClosedProjects?` + `page=${page}`)
   }
 
   getProject(id: number): Observable<Project> {
-    const url = `${this.projectsUrl}/${id}`;
+    const url = `${this.projectsUrl}/get/${id}`;
     return this.http.get<Project>(url).pipe(
       tap(_ => this.log(`fetched project id=${id}`)),
       catchError(this.handleError<Project>(`getProject id=${id}`))
     );
+  }
+
+  closeProject(id: number) {
+    const url = `${this.projectsUrl}/closeProject/${id}`;
+    return this.http.put<any>(url, id);
+  }
+
+  createProject(data) {
+    const url = `${this.projectsUrl}/createProject`;
+    return this.http.post<any>(url, data);
+  }
+
+
+  /**
+   * Envia el formulario de contacto de la view del componente contact a 
+   * la api para ser enviada por email
+   * @param dataContact el formulario a enviar
+   */
+  donation(dataContact) {
+    const path = `${this.projectsUrl}/donate`;
+    return this.http.put<any>(path, dataContact);
   }
 
 
@@ -54,6 +76,7 @@ export class ProjectService {
 
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
-    //TODO: implement message service? this.messageService.add(`ProjectService: ${message}`);
+    console.log(message);
   }
+  
 }

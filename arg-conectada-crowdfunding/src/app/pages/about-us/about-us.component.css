@@ -1,0 +1,30 @@
+.bgLightGrey { background-color: var(--white) }
+
+.center-text{  
+    text-align: left;
+    margin: auto 10% 2% 10%;
+}
+
+h6{
+    color: var(--gray);
+    max-width: 80%;
+    text-align: center;
+    margin: 0 auto 0 auto;
+}
+
+.center{
+    text-align: center;
+}
+
+.btn-collapse{
+    margin: 20px auto 1% auto;
+    outline: none;
+    width: 32px;
+    background-color: var(--lightblue);
+    color: var(--white);
+    border-radius: 15px;
+}
+
+.btn-collapse:hover { 
+    background-color: var(--lightblue-hover); 
+}
