@@ -20,9 +20,7 @@ export class NavbarComponent implements OnInit {
   authority: string;
 
   constructor(private tokenService: TokenService, 
-    private userService: UserService, private router: Router, public auth: OAuthService) {
-      this.auth.handleAuthentication();
-     }
+    private userService: UserService, private router: Router, public auth: OAuthService) {}
 
   ngOnInit() {
     if (this.tokenService.getToken()) {
@@ -30,7 +28,7 @@ export class NavbarComponent implements OnInit {
       this.isLogin = true;;
     }
   }
-
+  
   logOut(): void {
     this.tokenService.logOut();
     this.isLogin = false;

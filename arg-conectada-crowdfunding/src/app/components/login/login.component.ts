@@ -24,9 +24,7 @@ export class LoginComponent implements OnInit {
   error: {code: number, message: string} = null;
 
   constructor(private authService: AuthService, private tokenService: TokenService
-              , private location:Location, public auth: OAuthService) {
-                this.auth.handleAuthentication();
-               }
+              , private location:Location, public auth: OAuthService) { }
 
   ngOnInit() {
     if (this.tokenService.getToken()) {

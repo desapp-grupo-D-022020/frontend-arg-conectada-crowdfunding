@@ -1,32 +1,31 @@
 import { Injectable } from '@angular/core';
+import { WebAuth } from 'auth0-js';
 import { Router } from '@angular/router';
 import * as auth0 from 'auth0-js';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class OAuthService {
 
-  private _idToken: string;
-  private _accessToken: string;
-  private _expiresAt: number;
-  userProfile: any;
+  auth0: WebAuth;
 
-  auth0 = new auth0.WebAuth({
-    domain:       'dev-kzju2daw.auth0.com',
-    clientID:     'ZtL15vsZ4fj8yvlS5k560eVbGJb2aRsb',
-    responseType: 'token id_token',
-    audience: 'https://dev-kzju2daw.auth0.com/api/v2/',
-    redirectUri: 'http://localhost:4200/',
-    scope: 'openid',
-    leeway: 10
-  });
+  constructor(private router: Router) {
+    this.auth0 = new auth0.WebAuth({
+      domain: 'dev-kzju2daw.auth0.com',
+      clientID: 'ZtL15vsZ4fj8yvlS5k560eVbGJb2aRsb',
+      responseType: 'token id_token',
+      audience: 'https://dev-kzju2daw.auth0.com/api/v2/',
+      redirectUri: `${window.location.origin}`,
+      scope: 'openid'
+    });
+    this.handleAuthentication();
+  }
 
-  constructor(public router: Router) {
-    this._idToken = '';
-    this._accessToken = '';
-    this._expiresAt = 0;
-   }
+  public login() {
+    this.auth0.authorize();
+  }
 
   public loginGoogle() {
     this.auth0.authorize({
@@ -47,18 +46,19 @@ export class OAuthService {
   }
 
   public logout(): void {
-    this._accessToken = '';
-    this._idToken = '';
-    this._expiresAt = 0;
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('idToken');
+    localStorage.removeItem('expiresAt');
     localStorage.removeItem('isLoggedIn');
     this.auth0.logout({
-      returnTo: 'http://localhost:4200',
+      returnTo: `${window.location.origin}`,
       clientID: 'ZtL15vsZ4fj8yvlS5k560eVbGJb2aRsb'
     });
   }
 
   public isAuthenticated(): boolean {
-    return new Date().getTime() < this._expiresAt;
+    const expiresAt = JSON.parse(localStorage.getItem('expiresAt'));
+    return new Date().getTime() < expiresAt;
   }
 
   public handleAuthentication(): void {
@@ -74,22 +74,6 @@ export class OAuthService {
     });
   }
 
-  get accessToken(): string {
-    return this._accessToken;
-  }
-
-  get idToken(): string {
-    return this._idToken;
-  }
-
-  private setSession(authResult): void {
-    localStorage.setItem('isLoggedIn', 'true');
-    const expiresAt = (authResult.expiresIn * 1000) + new Date().getTime();
-    this._accessToken = authResult.accessToken;
-    this._idToken = authResult.idToken;
-    this._expiresAt = expiresAt;
-  }
-
   public renewSession(): void {
     this.auth0.checkSession({}, (err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
@@ -100,4 +84,42 @@ export class OAuthService {
       }
     });
   }
+
+  getProfile(cb) {
+    if (window.location.hash) {
+        this.auth0.parseHash({ hash: window.location.hash }, (err, authResult) => {
+        if (err) {
+          return console.log('parseHash error', err)
+        }
+        if (authResult) {
+          this.auth0.client.userInfo(authResult.accessToken, function(err, user) {
+            if (err) {
+              console.log('err accessToken', err)
+            }
+            localStorage.setItem('profile', JSON.stringify(user))
+            localStorage.setItem('id_token', authResult.idToken)
+            location.href = '/state';
+          })
+        }
+      })
+    }
+  }
+
+  setSession(authResult) {
+    console.log({ authResult });
+    if (authResult && authResult.accessToken && authResult.idToken) {
+      // Set the time that the access token will expire at
+      const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
+      localStorage.setItem('accessToken', authResult.accessToken);
+      localStorage.setItem('idToken', authResult.idToken);
+      localStorage.setItem('expiresAt', expiresAt);
+      this.getProfile((err, profile) => {
+        if (err) {
+          throw new Error(err);
+        }
+        this.router.navigate(['/']);
+      });
+    }
+  }
+
 }
