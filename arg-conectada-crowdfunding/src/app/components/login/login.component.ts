@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { UserLogin } from '../../models/user-login';
 import { AuthService } from '../../services/auth.service';
+import { OAuthService } from '../../services/auth0.service';
 import { TokenService } from '../../services/token.service';
 
 @Component({
@@ -23,7 +24,9 @@ export class LoginComponent implements OnInit {
   error: {code: number, message: string} = null;
 
   constructor(private authService: AuthService, private tokenService: TokenService
-              , private location:Location) { }
+              , private location:Location, public auth: OAuthService) {
+                this.auth.handleAuthentication();
+               }
 
   ngOnInit() {
     if (this.tokenService.getToken()) {

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 import { Observable } from 'rxjs';
+import { OAuthService } from '../../services/auth0.service';
 declare var $ : any;
 
 @Component({
@@ -19,7 +20,9 @@ export class NavbarComponent implements OnInit {
   authority: string;
 
   constructor(private tokenService: TokenService, 
-    private userService: UserService, private router: Router) { }
+    private userService: UserService, private router: Router, public auth: OAuthService) {
+      this.auth.handleAuthentication();
+     }
 
   ngOnInit() {
     if (this.tokenService.getToken()) {

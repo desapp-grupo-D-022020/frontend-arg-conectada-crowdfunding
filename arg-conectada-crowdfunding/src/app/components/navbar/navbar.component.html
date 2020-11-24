@@ -10,8 +10,10 @@
 			<a href="#" class="nav-item nav-link active" (click)="collapse()" i18n="home@@home">Home</a>
 			<a class="nav-item nav-link" (click)="collapse()" href="#about-us">About us</a>
 			<a href="#projects" class="nav-item nav-link" (click)="collapse()" i18n="projects@@projects">Projects</a>
-			<a class="nav-item nav-link" (click)="collapse()" routerLink="login" *ngIf="!isLogin">Login</a>
-   			<div class="nav-item dropdown" *ngIf="isLogin && $user | async as user">
+			<!-- <a class="nav-item nav-link" (click)="collapse()" routerLink="login" *ngIf="!isLogin">Login</a> -->
+			<a class="nav-item nav-link" routerLink="login" *ngIf="!auth.isAuthenticated()">Login</a>
+			<!-- <a class="nav-item nav-link" (click)="auth.logout()" *ngIf="auth.isAuthenticated()">Logout</a> -->
+   			<div class="nav-item dropdown" *ngIf="auth.isAuthenticated() && $user | async as user">
 				<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action">
 				<img *ngIf="user.img; else withImg" src="data:image/gif;base64,{{ user.img }}" class="rounded-circle" width="150" alt="member:{{ user.name }}"/>
 				<ng-template #withImg>
